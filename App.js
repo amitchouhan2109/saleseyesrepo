@@ -24,6 +24,26 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import RNFS from 'react-native-fs';
+import DocumentPicker from 'react-native-document-picker';
+import ImagePicker from 'react-native-image-picker';
+import {
+  Menu,
+  MenuOptions,
+  MenuOption,
+  MenuTrigger,
+} from 'react-native-popup-menu';
+import { Provider } from 'react-redux'
+import StarRating from 'react-native-star-rating';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { createLogger } from 'redux-logger';
+import thunk from 'redux-thunk';
+import RNFetchBlob from 'rn-fetch-blob'
+import I18n from 'react-native-i18n';
+
+
+
 const App: () => React$Node = () => {
   return (
     <>
