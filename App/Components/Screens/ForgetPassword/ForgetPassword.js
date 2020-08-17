@@ -73,7 +73,9 @@ const ForgetPassword = (props) => {
             },
             error: (err) => {
                 setloading(false)
-                Alert.alert(err.message);
+                setTimeout(() => {
+                    Alert.alert(err.message);
+                }, 100)
             },
             complete: () => {
                 setloading(false)
@@ -146,7 +148,7 @@ const ForgetPassword = (props) => {
     // }
 
     const signinHandler = () => {
-        console.log("signInHandler")
+        // console.log("signInHandler")
     }
 
     return (

@@ -42,7 +42,7 @@ const App: () => React$Node = () => {
   const store = configureStore();
 
   useEffect(() => {
-    console.log("useEffect App.js")
+    // console.log("useEffect App.js")
     YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
     console.disableYellowBox = true;
     // setDefaultFontStyle()

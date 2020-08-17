@@ -57,25 +57,29 @@ const ChangePassword = (props) => {
         if (baseUrl && baseUrl !== undefined) {
             let cb = {
                 success: async (res) => {
-                    console.log("success res:", res)
+                    // console.log("success res:", res)
                     setloading(false)
-                    Alert.alert(
-                        'Success',
-                        helpers.getLocale(localize, "changePassword", "onSubmitSuccess"),
-                        [
-                            {
-                                text: 'OK', onPress: () => {
-                                    props.navigation.navigate('LogIn')
-                                }
-                            },
-                        ]
-                    );
-
+                    setTimeout(() => {
+                        Alert.alert(
+                            'Success',
+                            helpers.getLocale(localize, "changePassword", "onSubmitSuccess"),
+                            [
+                                {
+                                    text: 'OK', onPress: () => {
+                                        props.navigation.navigate('LogIn')
+                                    }
+                                },
+                            ]
+                        );
+                    }, 100)
 
                 },
+
                 error: (err) => {
                     setloading(false)
-                    Alert.alert("Error", err.message)
+                    setTimeout(() => {
+                        Alert.alert("Error", err.message)
+                    }, 100)
 
                 },
                 complete: () => {

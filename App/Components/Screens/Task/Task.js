@@ -82,15 +82,17 @@ const Task = (props) => {
         if (baseUrl && baseUrl !== undefined) {
             let cb = {
                 success: async (res) => {
-                    console.log({ res })
+                    // console.log({ res })
                     setMsgLoader(false)
                     if (res[0].task_comments !== undefined) {
                         setgetMessage(res[0].task_comments)
                     }
                 },
                 error: (err) => {
-                    Alert.alert("Failed")
                     setMsgLoader(false)
+                    setTimeout(() => {
+                        Alert.alert("Failed")
+                    }, 100)
                 },
                 complete: () => { },
             };
@@ -108,7 +110,7 @@ const Task = (props) => {
         }
     }
     const addCommentData = async () => {
-        console.log(message, "message")
+        // console.log(message, "message")
         if (message) {
             setloading(true)
             let userAuthdetails = await helpers.userAuthdetails();
@@ -116,20 +118,25 @@ const Task = (props) => {
             if (baseUrl && baseUrl !== undefined) {
                 let cb = {
                     success: async (res) => {
-                        console.log({ res })
+                        // console.log({ res })
                         toggleModal(false)
                         setloading(false)
-                        Alert.alert(
-                            'Success',
-                            'Message Added Successfully ',
-                        );
+                        setTimeout(() => {
+                            Alert.alert(
+                                'Success',
+                                'Message Added Successfully ',
+                            );
+                        }, 100)
                         setmessage("")
                         getCommentData()
                     },
                     error: (err) => {
-                        Alert.alert("Error", err.message)
                         toggleModal(false)
                         setloading(false)
+                        setTimeout(() => {
+                            Alert.alert("Error", err.message)
+                        }, 100)
+
                     },
                     complete: () => { },
                 };
@@ -176,10 +183,10 @@ const Task = (props) => {
                 },
                 error: (err) => {
                     setloading(false)
+                    props.navigation.navigate('LogIn')
                     setTimeout(() => {
-                        props.navigation.navigate('LogIn')
                         Alert.alert("Error", err.message)
-                    }, 200);
+                    }, 100);
 
                 },
                 complete: () => { },
@@ -204,7 +211,7 @@ const Task = (props) => {
         if (baseUrl && baseUrl !== undefined) {
             let cb = {
                 success: async (res) => {
-                    console.log({ res })
+                    // console.log({ res })
                     setloading(false)
                     setTimeout(() => {
                         Alert.alert('Success', 'Save Successfully ');
@@ -214,12 +221,12 @@ const Task = (props) => {
                     setloading(false)
                     setTimeout(() => {
                         Alert.alert("Error", err.message)
-                    }, 200);
+                    }, 100);
                 },
                 complete: () => { },
             };
             let header = helpers.buildHeader();
-            console.log("task_id", task.item.id, task.item.task_type)
+            // console.log("task_id", task.item.id, task.item.task_type)
             setloading(true)
             let data = {
                 "user_id": userAuthdetails.user_id,
@@ -229,7 +236,7 @@ const Task = (props) => {
                 "task_evaluation": starCount,
                 "api_key": globals.API_KEY,
             };
-            console.log("data", data)
+            // console.log("data", data)
             API.saveEvalutionData(data, cb, header);
         } else {
 

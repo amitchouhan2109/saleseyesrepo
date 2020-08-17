@@ -112,10 +112,14 @@ const Login = (props) => {
                 console.log(err, "e")
                 setloading(false)
                 if (err.type === 'AUTHORIZATION' || err.message === 'Not logged in / Wrong password or username / Token expired') {
-                    Alert.alert("Wrong username or password")
+                    setTimeout(() => {
+                        Alert.alert("Wrong username or password")
+                    }, 100)
                 }
                 else {
-                    Alert.alert(err.message)
+                    setTimeout(() => {
+                        Alert.alert(err.message)
+                    }, 100)
                 }
 
             },
@@ -157,7 +161,7 @@ const Login = (props) => {
                 setloading(false)
                 setTimeout(() => {
                     Alert.alert("Error", err.message)
-                }, 200);
+                }, 100);
             },
             complete: () => { setloading(false) },
         };
