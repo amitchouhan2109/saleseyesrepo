@@ -50,40 +50,20 @@ const Task = (props) => {
     const [MsgLoader, setMsgLoader] = useState(false);
     const [loading, setloading] = useState(false);
     const [msgemptyErr, setmsgemptyErr] = useState(false);
-
-
-
     const [docCount1, setdocCount1] = useState([]);
     var DocumentCount = []
-    var docu = []
+
     if (Document && Document != undefined) {
-
         for (const item of Object.entries(Document)) {
-
-            Object.entries(item)
-            Object.entries(item).forEach(([key, value]) => {
-                console.log(`${key} ${value}`);
-
-            });
-            var item2 = Object.entries(item[1])
-            var item3 = Object.entries(item2[1])
-            console.log("Item45", item3[1])
-            // console.log("item3", item3[1].title)
-            const newArray = item3.map(element => element);
-            console.log(newArray, "123")
             var docCount = Object.keys(item[1]).length
-            var docCount13 = Object.values(item[1])
-            // setdocCount1(docCount13)
-            // var dat45 =docCount13
-            console.log(docCount13, "23")
+            var docList = Object.values(item[1])
             for (var i = 0; i < docCount; i++) {
-                let doc = i
                 let obj = {}
                 DocumentCount.push(obj)
             }
         }
     }
-    console.log("dg", docCount13)
+
 
     useEffect(() => {
         const unsubscribe = props.navigation.addListener('focus', () => {
@@ -101,7 +81,6 @@ const Task = (props) => {
         if (baseUrl && baseUrl !== undefined) {
             let cb = {
                 success: async (res) => {
-                    // console.log({ res })
                     setMsgLoader(false)
                     if (res[0].task_comments !== undefined) {
                         setgetMessage(res[0].task_comments)
@@ -110,10 +89,12 @@ const Task = (props) => {
                 error: (err) => {
                     setMsgLoader(false)
                     setTimeout(() => {
-                        Alert.alert("Failed")
+                        Alert.alert(err.message)
                     }, 100)
                 },
-                complete: () => { },
+                complete: () => {
+                    setMsgLoader(false)
+                },
             };
             let header = helpers.buildHeader();
             let data = {
@@ -129,7 +110,6 @@ const Task = (props) => {
         }
     }
     const addCommentData = async () => {
-        // console.log(message, "message")
         if (message) {
             setloading(true)
             let userAuthdetails = await helpers.userAuthdetails();
@@ -137,7 +117,6 @@ const Task = (props) => {
             if (baseUrl && baseUrl !== undefined) {
                 let cb = {
                     success: async (res) => {
-                        // console.log({ res })
                         toggleModal(false)
                         setloading(false)
                         setTimeout(() => {
@@ -190,7 +169,6 @@ const Task = (props) => {
                     AsyncStorage.removeItem('userAuthDetails');
                     AsyncStorage.removeItem('token');
                     // AsyncStorage.removeItem('userName');
-                    // props.navigation.navigate('LogIn')
                     props.navigation.dispatch(
                         CommonActions.reset({
                             index: 0,
@@ -338,13 +316,9 @@ const Task = (props) => {
                     {Document ?
                         <View style={{ paddingLeft: 10 }}>
                             <FlatList
-                                // data={DocumentCount}
-                                data={docCount13}
+                                data={docList}
                                 renderItem={({ item, index }) =>
-                                    // <Text style={styles.documentListText}>{helpers.getLocale(localize, "task", "document_name")}
-                                    //     {index + 1}</Text>
                                     <Text style={styles.documentListText}>{item.title}</Text>
-
                                 }
                                 keyExtractor={_keyExtractor}
                                 removeClippedSubviews={Platform.OS == "android" ? true : false}
@@ -377,7 +351,7 @@ const Task = (props) => {
                     {/* {msgExpand && */}
                     {MsgLoader ?
                         <View>
-                            <ActivityIndicator />
+                            <ActivityIndicator animating={true} color="blue" />
                         </View> :
                         <>
                             {getMessage.length == 0 ?

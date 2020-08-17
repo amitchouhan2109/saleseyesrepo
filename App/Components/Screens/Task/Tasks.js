@@ -201,7 +201,9 @@ const Tasks = (props) => {
                         />
                     </View>
                     <View style={styles.tasksListWrapper}>
-                        {TaskLoader ? <ActivityIndicator size={large} /> :
+                        {TaskLoader ?
+                            <ActivityIndicator color="blue" />
+                            :
                             <>
                                 {task.length === 0 &&
                                     <Text style={styles.emptyDataText}> {helpers.getLocale(localize, "tasks", "empty_task")}</Text>}

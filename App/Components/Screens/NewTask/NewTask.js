@@ -151,7 +151,6 @@ const NewTask = (props) => {
                 } else if (response.customButton) {
                     console.log('User tapped custom button: ', response.customButton);
                 } else {
-                    // setTimeout(() => { setpicture("Photo1") }, 3000)
                     console.log('picker resp', response)
                     uploadDoc(response.fileName, response.uri, base64Value, " ", "Photo1")
                 }
@@ -170,24 +169,21 @@ const NewTask = (props) => {
                     console.log({ res })
                     Alert.alert(
                         'Success',
-                        // ' Document uploaded successfully ',
                         helpers.getLocale(localize, "newTask", "upload_success"),
                         [
                             {
                                 text: 'OK', onPress: () => {
                                     const source = { uri: uri };
                                     if (image != " ") {
-                                        // const item = new Object();
+
                                         const item = { "fileName": fileName }
                                         const arr = [...uploadedImg]
                                         arr.push(item)
                                         const img = { source }
                                         Document.push(item);
-                                        console.log("Doc", Document, uploadedImg)
                                         setuploadedImg(arr)
                                     }
                                     else {
-                                        // const item = new Object();
                                         const item = { "fileName": fileName }
                                         const array = [...uploadedDoc]
                                         array.push(item)
@@ -205,7 +201,10 @@ const NewTask = (props) => {
                     setloading(false)
                     Alert.alert("Error", " Something went wrong while uploading document")
                 },
-                complete: () => { },
+                complete: () => {
+                    setloading(false)
+
+                },
             };
             let header = helpers.buildHeader();
             let data = {
@@ -215,7 +214,6 @@ const NewTask = (props) => {
                 "filename": fileName,
                 "photo": photo,
                 "api_key": globals.API_KEY,
-
             };
             API.postDocument(data, cb, header);
         } else {
@@ -372,7 +370,6 @@ const NewTask = (props) => {
                             <FlatList
                                 data={uploadedImg}
                                 renderItem={({ item, index }) =>
-                                    // <Text style={styles.text}>{helpers.getLocale(localize, "newTask", "image_name")}{index + 1}</Text>}
                                     <Text style={styles.text}>{item.fileName}</Text>}
 
                                 keyExtractor={(item, index) => index.toString()}
@@ -381,7 +378,6 @@ const NewTask = (props) => {
                             <FlatList
                                 data={uploadedDoc}
                                 renderItem={({ item, index }) =>
-                                    // <Text style={styles.text}>{helpers.getLocale(localize, "newTask", "document_name")}{index + 1}</Text>}
                                     <Text style={styles.text}>{item.fileName}</Text>}
 
                                 keyExtractor={(item, index) => index.toString()}
