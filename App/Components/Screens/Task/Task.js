@@ -53,11 +53,29 @@ const Task = (props) => {
 
 
 
-    // const [docCount, setdocCount] = useState("");
+    const [docCount1, setdocCount1] = useState([]);
     var DocumentCount = []
+    var docu = []
     if (Document && Document != undefined) {
+
         for (const item of Object.entries(Document)) {
+
+            Object.entries(item)
+            Object.entries(item).forEach(([key, value]) => {
+                console.log(`${key} ${value}`);
+
+            });
+            var item2 = Object.entries(item[1])
+            var item3 = Object.entries(item2[1])
+            console.log("Item45", item3[1])
+            // console.log("item3", item3[1].title)
+            const newArray = item3.map(element => element);
+            console.log(newArray, "123")
             var docCount = Object.keys(item[1]).length
+            var docCount13 = Object.values(item[1])
+            // setdocCount1(docCount13)
+            // var dat45 =docCount13
+            console.log(docCount13, "23")
             for (var i = 0; i < docCount; i++) {
                 let doc = i
                 let obj = {}
@@ -65,6 +83,7 @@ const Task = (props) => {
             }
         }
     }
+    console.log("dg", docCount13)
 
     useEffect(() => {
         const unsubscribe = props.navigation.addListener('focus', () => {
@@ -319,9 +338,13 @@ const Task = (props) => {
                     {Document ?
                         <View style={{ paddingLeft: 10 }}>
                             <FlatList
-                                data={DocumentCount}
+                                // data={DocumentCount}
+                                data={docCount13}
                                 renderItem={({ item, index }) =>
-                                    <Text style={styles.documentListText}>{helpers.getLocale(localize, "task", "document_name")}{index + 1}</Text>
+                                    // <Text style={styles.documentListText}>{helpers.getLocale(localize, "task", "document_name")}
+                                    //     {index + 1}</Text>
+                                    <Text style={styles.documentListText}>{item.title}</Text>
+
                                 }
                                 keyExtractor={_keyExtractor}
                                 removeClippedSubviews={Platform.OS == "android" ? true : false}

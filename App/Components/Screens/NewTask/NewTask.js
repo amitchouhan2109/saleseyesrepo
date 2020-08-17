@@ -158,7 +158,9 @@ const NewTask = (props) => {
             });
         }
     }
+
     const uploadDoc = async (fileName, uri, photo, doc, image) => {
+        console.log("Filename", fileName)
         setloading(true)
         let userAuthdetails = await helpers.userAuthdetails();
         const baseUrl = await AsyncStorage.getItem("baseUrl");
@@ -175,15 +177,18 @@ const NewTask = (props) => {
                                 text: 'OK', onPress: () => {
                                     const source = { uri: uri };
                                     if (image != " ") {
-                                        const item = new Object();
+                                        // const item = new Object();
+                                        const item = { "fileName": fileName }
                                         const arr = [...uploadedImg]
                                         arr.push(item)
                                         const img = { source }
                                         Document.push(item);
+                                        console.log("Doc", Document, uploadedImg)
                                         setuploadedImg(arr)
                                     }
                                     else {
-                                        const item = new Object();
+                                        // const item = new Object();
+                                        const item = { "fileName": fileName }
                                         const array = [...uploadedDoc]
                                         array.push(item)
                                         setuploadedDoc(array)
@@ -234,6 +239,7 @@ const NewTask = (props) => {
 
         }
     }
+
     const addDocument = async () => {
         if (!task_id) {
             Alert.alert(helpers.getLocale(localize, "newTask", "taskid_not_availabel"))
@@ -243,8 +249,15 @@ const NewTask = (props) => {
                 type: [DocumentPicker.types.allFiles]
             })
                 .then(res => {
-                    console.log('res', res, res.uri)
-                    RNFS.readFile(res.uri, "base64").then(result => {
+                    console.log('rest', res, res.uri)
+                    let filepath = ""
+                    if (Platform.OS === "android") {
+                        filepath = res.uri
+                    } else {
+                        let basepath = res.uri.substring(0, res.uri.lastIndexOf("/"));
+                        filepath = basepath + "/" + res.name;
+                    }
+                    RNFS.readFile(filepath, "base64").then(result => {
                         uploadDoc(res.name, res.uri, result, "Doc1 ", " ")
                         setTimeout(() => { setdocument("Doc1") }, 3000)
                     })
@@ -359,14 +372,18 @@ const NewTask = (props) => {
                             <FlatList
                                 data={uploadedImg}
                                 renderItem={({ item, index }) =>
-                                    <Text style={styles.text}>{helpers.getLocale(localize, "newTask", "image_name")}{index + 1}</Text>}
+                                    // <Text style={styles.text}>{helpers.getLocale(localize, "newTask", "image_name")}{index + 1}</Text>}
+                                    <Text style={styles.text}>{item.fileName}</Text>}
+
                                 keyExtractor={(item, index) => index.toString()}
                                 removeClippedSubviews={Platform.OS == "android" ? true : false}
                             />
                             <FlatList
                                 data={uploadedDoc}
                                 renderItem={({ item, index }) =>
-                                    <Text style={styles.text}>{helpers.getLocale(localize, "newTask", "document_name")}{index + 1}</Text>}
+                                    // <Text style={styles.text}>{helpers.getLocale(localize, "newTask", "document_name")}{index + 1}</Text>}
+                                    <Text style={styles.text}>{item.fileName}</Text>}
+
                                 keyExtractor={(item, index) => index.toString()}
                                 removeClippedSubviews={Platform.OS == "android" ? true : false}
                             />
