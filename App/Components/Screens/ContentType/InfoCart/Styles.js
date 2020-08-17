@@ -46,6 +46,24 @@ export default styles = StyleSheet.create({
         fontFamily: fonts.fontFamily.Regular
 
     },
+    column1Wrapper: {
+        width: "57%", borderWidth: 0,
+        // ...sty.jCenter,
+
+    },
+    column1Text: {
+        fontSize: 20, borderWidth: 0, lineHeight: 22, fontFamily: "MyriadPro-Regular"
+
+    },
+    column2Wrapper: {
+        width: "43%", borderWidth: 0, ...sty.jCenter, paddingLeft: 0, borderWidth: 0,
+
+    },
+    column2Text: {
+        fontSize: 20, borderWidth: 0, lineHeight: 22,
+        fontFamily: "MyriadPro-Regular"
+
+    }
 
 
 });

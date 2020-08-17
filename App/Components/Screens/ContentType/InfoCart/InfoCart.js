@@ -52,22 +52,18 @@ const InfoCart = (props) => {
 
 
 
-    const signinHandler = () => {
-        // console.log("signInHandler")
-    }
+
 
     const infoRow = (tag, value, fontStyle = {}) => {
         return (
             <View style={{ ...sty.fRow, }}>
-                <View style={{ width: "57%", borderWidth: 0, ...sty.jCenter }}>
-
-                    <Text allowFontScaling={false} style={[{ fontSize: 20, borderWidth: 0, lineHeight: 22, fontFamily: "MyriadPro-Regular" }]}>{helpers.getLocale(props.localize, "task", tag) + ":"}</Text>
+                <View style={styles.column1Wrapper}>
+                    <Text allowFontScaling={false} style={[styles.column1Text]}>{helpers.getLocale(props.localize, "task", tag) + ":"}</Text>
                 </View >
-                <View style={{ width: "43%", borderWidth: 0, ...sty.jCenter, paddingLeft: 0, borderWidth: 0, }}>
-                    <Text allowFontScaling={false} style={[{
-                        fontSize: 20, borderWidth: 0, lineHeight: 22,
-                        fontFamily: "MyriadPro-Regular"
-                    }, fontStyle]}>{value}</Text>
+                <View style={styles.column2Wrapper}>
+                    <Text allowFontScaling={false} style={[
+                        styles.column2Text
+                        , fontStyle]}>{value}</Text>
                 </View >
             </View>
         )

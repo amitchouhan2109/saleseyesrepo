@@ -60,29 +60,19 @@ const SignUp = (props) => {
 
 
 
-
-
-
-
     useEffect(() => {
 
-        // console.log("Login useEffect")
-        // console.log("height , width ", globals.WINDOW_HEIGHT, globals.WINDOW_WIDTH)
-        // if (campaigns["favorite"] == null || campaigns["favorite"].length == 0)
-        // _getFavCampaign()
     }, [])
 
     const signinHandler = () => {
         if (email && userName && lastName && address && phoneNo && city && customerId) {
             const emailerr = validation("email", email)
             const phoneNoerr = validation("phoneNo", phoneNo)
-
             if (!phoneNoerr) {
-                Alert.alert("You have entered an invalid  phone-no!")
-
+                Alert.alert(helpers.getLocale(localize, "signIn", "phoneNo_err"))
             }
             else if (!emailerr) {
-                Alert.alert("You have entered an invalid email address!")
+                Alert.alert(helpers.getLocale(localize, "forgetPassword", "validation_err"))
             }
             else {
                 getEndPoint()
@@ -91,32 +81,29 @@ const SignUp = (props) => {
         else {
             Alert.alert(helpers.getLocale(localize, "signIn", "onSubmit"))
         }
-        // signupUser()
+
     }
 
     const signupUser = () => {
-        // setloading(true)
+
         let cb = {
             success: async (res) => {
                 // console.log("success res:", res)
                 setloading(false)
-                setTimeout(() => {
-                    Alert.alert("Success", "Registerd Successfully!",
-                        [
-                            {
-                                text: 'OK', onPress: () => {
-                                    props.navigation.navigate('LogIn')
-                                }
-                            },
-                        ])
-                }, 100)
-
+                Alert.alert(helpers.getLocale(localize, "signIn", "onSubmitSuccess"),
+                    [
+                        {
+                            text: 'OK', onPress: () => {
+                                props.navigation.navigate('LogIn')
+                            }
+                        },
+                    ])
             },
             error: (err) => {
                 setloading(false)
-                setTimeout(() => {
-                    Alert.alert("Error", err.message)
-                }, 100)
+                // setTimeout(() => {
+                Alert.alert("Error", err.message)
+                // }, 100)
 
             },
             complete: () => {
@@ -125,7 +112,6 @@ const SignUp = (props) => {
         };
 
         let header = helpers.buildHeader({});
-        // console.log({ userName, lastName, company, phoneNo, email, address, city })
         let data = {
             firstname: userName,
             lastname: lastName,
@@ -162,9 +148,9 @@ const SignUp = (props) => {
             },
             error: (err) => {
                 setloading(false)
-                setTimeout(() => {
-                    Alert.alert("Error", err.message)
-                }, 100)
+                // setTimeout(() => {
+                Alert.alert("Error", err.message)
+                // }, 100)
             },
             complete: () => {
                 setloading(false)

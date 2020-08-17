@@ -19,7 +19,10 @@
     "email": "Email",
     "address": "Address",
     "city": "City",
-    "onSubmit": "Please fill  all required details"
+    "onSubmit": "Please fill  all required details",
+    "onSubmitSuccess": "Registerd successfully!",
+    "phoneNo_err": "You have entered an invalid  phone-no! "
+
   },
   "forgetPassword": {
     "userName": "Username/Email-id",

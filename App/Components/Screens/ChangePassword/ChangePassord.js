@@ -34,13 +34,6 @@ const ChangePassword = (props) => {
     const [currentPassword, setcurrentPassword] = useState("");
     const [password, setpassword] = useState("");
     const [confirmPassword, setconfirmPassword] = useState("");
-
-    const [currentPassValid, setcurrentPassValid] = useState("");
-    const [passwordValid, setpasswordValid] = useState("");
-    const [confirmPassValid, setconfirmPassValid] = useState("");
-
-
-
     const [loading, setloading] = useState(false);
     const loginData = useSelector(state => state.loginData);
 
@@ -48,6 +41,7 @@ const ChangePassword = (props) => {
 
     }, [])
     const resetPassword = async () => {
+        setloading(true)
         let token = await AsyncStorage.getItem('token');
         let userAuthdetails = await helpers.userAuthdetails();
 

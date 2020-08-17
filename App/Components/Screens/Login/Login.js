@@ -89,7 +89,7 @@ const Login = (props) => {
     const logInUser = () => {
         let cb = {
             success: async (res) => {
-                console.log({ res }, "12")
+                // console.log({ res })
 
                 await AsyncStorage.setItem("userAuthDetails", JSON.stringify(res[0]));
                 await AsyncStorage.setItem("token", res[0].token);
@@ -109,7 +109,7 @@ const Login = (props) => {
 
             },
             error: (err) => {
-                console.log(err, "e")
+                // console.log(err, "e")
                 setloading(false)
                 if (err.type === 'AUTHORIZATION' || err.message === 'Not logged in / Wrong password or username / Token expired') {
                     setTimeout(() => {
@@ -142,7 +142,6 @@ const Login = (props) => {
     const getEndPoint = () => {
         let cb = {
             success: async (res) => {
-                console.log({ res }, "13")
                 if (res.error === null) {
                     await AsyncStorage.setItem("baseUrl", res.result.ws_url);
                     logInUser()
@@ -157,7 +156,7 @@ const Login = (props) => {
                 }
             },
             error: (err) => {
-                console.log("err", err)
+                // console.log("err", err)
                 setloading(false)
                 setTimeout(() => {
                     Alert.alert("Error", err.message)
@@ -168,7 +167,6 @@ const Login = (props) => {
         setloading(true)
         let header = helpers.buildHeader({});
         let data = {
-            // company_code: "app",
             company_code: customerId
         };
         API.getEndPoint(data, cb, header);

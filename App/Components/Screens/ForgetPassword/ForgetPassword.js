@@ -31,10 +31,6 @@ const ForgetPassword = (props) => {
 
     useEffect(() => {
 
-        // console.log("Login useEffect")
-        // console.log("height , width ", globals.WINDOW_HEIGHT, globals.WINDOW_WIDTH)
-        // if (campaigns["favorite"] == null || campaigns["favorite"].length == 0)
-        // _getFavCampaign()
     }, [])
     const forgotPasswordHandler = () => {
         if (userName && customerId) {
@@ -66,7 +62,6 @@ const ForgetPassword = (props) => {
                         Alert.alert(res.error.code)
                     }
                     else {
-                        setloading(false)
                         Alert.alert('Error in fetch end Point', 'Authentication failed');
                     }
                 }
@@ -93,17 +88,10 @@ const ForgetPassword = (props) => {
 
 
     const forgetPassword = async () => {
-        // if (userName && customerId) {
-        //     const emailerr = validation("email", userName)
-        //     if (!emailerr) {
-        //         Alert.alert(helpers.getLocale(localize, "forgetPassword", "validation_err"))
-        //     }
-        //     else {
         // const baseUrl = await AsyncStorage.getItem("baseUrl");
         // if (baseUrl && baseUrl !== undefined) {
         let cb = {
             success: async (res) => {
-                console.log("success res:", res)
                 setloading(false)
                 Alert.alert(
                     'Success',
@@ -140,16 +128,9 @@ const ForgetPassword = (props) => {
     //         // getEndPoint()
     //     }
     // }
-    // }
-    // else {
-    //     Alert.alert(helpers.getLocale(localize, "forgetPassword", "onSubmit"))
-    // }
 
-    // }
 
-    const signinHandler = () => {
-        // console.log("signInHandler")
-    }
+
 
     return (
         <View style={[mainStyle.rootView, styles.container]}>
