@@ -57,7 +57,7 @@ const Login = (props) => {
     }
 
     const signinHandler = () => {
-        if (userName && password) {
+        if (userName && password && customerId) {
             const emailerr = validation("email", userName)
             if (!emailerr) {
                 Alert.alert(helpers.getLocale(localize, "login", "validation_err"))
@@ -89,6 +89,8 @@ const Login = (props) => {
     const logInUser = () => {
         let cb = {
             success: async (res) => {
+                console.log({ res }, "12")
+
                 await AsyncStorage.setItem("userAuthDetails", JSON.stringify(res[0]));
                 await AsyncStorage.setItem("token", res[0].token);
                 await AsyncStorage.setItem("userName", userName);
@@ -107,6 +109,7 @@ const Login = (props) => {
 
             },
             error: (err) => {
+                console.log(err, "e")
                 setloading(false)
                 if (err.type === 'AUTHORIZATION' || err.message === 'Not logged in / Wrong password or username / Token expired') {
                     Alert.alert("Wrong username or password")
@@ -135,15 +138,22 @@ const Login = (props) => {
     const getEndPoint = () => {
         let cb = {
             success: async (res) => {
+                console.log({ res }, "13")
                 if (res.error === null) {
                     await AsyncStorage.setItem("baseUrl", res.result.ws_url);
                     logInUser()
                 } else {
-                    Alert.alert('Error in fetch end Point', 'Authentication failed');
                     setloading(false)
+                    if (res.error.code === "COMPANY_NOT_FOUND") {
+                        Alert.alert(res.error.code)
+                    }
+                    else {
+                        Alert.alert('Error in fetch end Point', 'Authentication failed');
+                    }
                 }
             },
             error: (err) => {
+                console.log("err", err)
                 setloading(false)
                 setTimeout(() => {
                     Alert.alert("Error", err.message)
@@ -154,7 +164,8 @@ const Login = (props) => {
         setloading(true)
         let header = helpers.buildHeader({});
         let data = {
-            company_code: "app"
+            // company_code: "app",
+            company_code: customerId
         };
         API.getEndPoint(data, cb, header);
 

@@ -26,6 +26,8 @@ const ForgetPassword = (props) => {
     const [checked, setchecked] = useState(false);
     const [loading, setloading] = useState(false);
     const [userNameValid, setuserNameValid] = useState("");
+    const [customerId, setcustomerId] = useState("");
+
 
     useEffect(() => {
 
@@ -34,16 +36,39 @@ const ForgetPassword = (props) => {
         // if (campaigns["favorite"] == null || campaigns["favorite"].length == 0)
         // _getFavCampaign()
     }, [])
+    const forgotPasswordHandler = () => {
+        if (userName && customerId) {
+            const emailerr = validation("email", userName)
+            if (!emailerr) {
+                Alert.alert(helpers.getLocale(localize, "forgetPassword", "validation_err"))
+            }
+            else {
+                getEndPoint()
+            }
+        }
+        else {
+            Alert.alert(helpers.getLocale(localize, "forgetPassword", "onSubmit"))
+        }
+
+
+    }
 
     const getEndPoint = () => {
+        setloading(true)
         let cb = {
             success: async (res) => {
                 if (res.error === null) {
                     await AsyncStorage.setItem("baseUrl", res.result.ws_url);
-                    forgetPawword()
+                    forgetPassword()
                 } else {
                     setloading(false)
-                    Alert.alert('Error in fetch end Point', 'Authentication failed');
+                    if (res.error.code === "COMPANY_NOT_FOUND") {
+                        Alert.alert(res.error.code)
+                    }
+                    else {
+                        setloading(false)
+                        Alert.alert('Error in fetch end Point', 'Authentication failed');
+                    }
                 }
             },
             error: (err) => {
@@ -57,67 +82,68 @@ const ForgetPassword = (props) => {
 
         let header = helpers.buildHeader({});
         let data = {
-            company_code: "app"
+            // company_code: "app"
+            company_code: customerId
+
         };
         API.getEndPoint(data, cb, header);
     };
 
 
     const forgetPassword = async () => {
-        if (userName) {
-            const emailerr = validation("email", userName)
-            if (!emailerr) {
-                Alert.alert(helpers.getLocale(localize, "forgetPassword", "validation_err"))
-            }
-            else {
-                setloading(true)
-                const baseUrl = await AsyncStorage.getItem("baseUrl");
-                if (baseUrl && baseUrl !== undefined) {
-                    let cb = {
-                        success: async (res) => {
-                            console.log("success res:", res)
-                            setloading(false)
-                            Alert.alert(
-                                'Success',
-                                helpers.getLocale(localize, "forgetPassword", "onSubmitSuccess"),
-                                [
-                                    {
-                                        text: 'OK', onPress: () => {
-                                            props.navigation.navigate('LogIn')
-                                        }
-                                    },
-                                ]
-                            );
-
+        // if (userName && customerId) {
+        //     const emailerr = validation("email", userName)
+        //     if (!emailerr) {
+        //         Alert.alert(helpers.getLocale(localize, "forgetPassword", "validation_err"))
+        //     }
+        //     else {
+        // const baseUrl = await AsyncStorage.getItem("baseUrl");
+        // if (baseUrl && baseUrl !== undefined) {
+        let cb = {
+            success: async (res) => {
+                console.log("success res:", res)
+                setloading(false)
+                Alert.alert(
+                    'Success',
+                    helpers.getLocale(localize, "forgetPassword", "onSubmitSuccess"),
+                    [
+                        {
+                            text: 'OK', onPress: () => {
+                                props.navigation.navigate('LogIn')
+                            }
                         },
-                        error: (err) => {
-                            setloading(false)
-                            Alert.alert(err.message)
-                        },
-                        complete: () => {
-                            setloading(false)
+                    ]
+                );
 
-                        },
-                    };
+            },
+            error: (err) => {
+                setloading(false)
+                Alert.alert(err.message)
+            },
+            complete: () => {
+                setloading(false)
 
-                    let header = helpers.buildHeader();
-                    let data = {
-                        "username": userName,
-                        "api_key": globals.API_KEY
-                    };
-                    API.forgetPassword(data, cb, header);
+            },
+        };
 
-                }
-                else {
-                    getEndPoint()
-                }
-            }
-        }
-        else {
-            Alert.alert(helpers.getLocale(localize, "forgetPassword", "onSubmit"))
-        }
+        let header = helpers.buildHeader();
+        let data = {
+            "username": userName,
+            "api_key": globals.API_KEY
+        };
+        API.forgetPassword(data, cb, header);
 
     }
+    //     else {
+    //         // getEndPoint()
+    //     }
+    // }
+    // }
+    // else {
+    //     Alert.alert(helpers.getLocale(localize, "forgetPassword", "onSubmit"))
+    // }
+
+    // }
 
     const signinHandler = () => {
         console.log("signInHandler")
@@ -136,12 +162,18 @@ const ForgetPassword = (props) => {
                     value={userName}
 
                 />
+                <_InputText
+                    style={styles.TextInput}
+                    placeholder={helpers.getLocale(localize, "login", "customerId")}
+                    onChangeText={value => { setcustomerId(value) }}
+                    value={customerId}
+                />
             </View>
             <View style={styles.signUpWrapper}>
                 <View style={styles.signUpView}>
                     <_Button
                         btnTxt={helpers.getLocale(localize, "forgetPassword", "send")}
-                        callback={forgetPassword} />
+                        callback={forgotPasswordHandler} />
                 </View>
             </View>
         </View >

@@ -43,6 +43,7 @@ const SignUp = (props) => {
     const [userName, setuserName] = useState("");
     const [lastName, setlastName] = useState("");
     const [company, setcompany] = useState("");
+    const [customerId, setcustomerId] = useState("");
     const [phoneNo, setphoneNo] = useState("");
     const [email, setemail] = useState("");
     const [address, setaddress] = useState("");
@@ -72,7 +73,7 @@ const SignUp = (props) => {
     }, [])
 
     const signinHandler = () => {
-        if (email && userName && lastName && address && phoneNo && city) {
+        if (email && userName && lastName && address && phoneNo && city && customerId) {
             const emailerr = validation("email", email)
             const phoneNoerr = validation("phoneNo", phoneNo)
 
@@ -144,7 +145,12 @@ const SignUp = (props) => {
 
                 } else {
                     setloading(false)
-                    Alert.alert('Error in fetch end Point', 'Authentication failed');
+                    if (res.error.code === "COMPANY_NOT_FOUND") {
+                        Alert.alert(res.error.code)
+                    }
+                    else {
+                        Alert.alert('Error in fetch end Point', 'Authentication failed');
+                    }
                 }
 
             },
@@ -159,7 +165,7 @@ const SignUp = (props) => {
 
         let header = helpers.buildHeader({});
         let data = {
-            company_code: "app"
+            company_code: customerId
         };
         API.getEndPoint(data, cb, header);
     };
@@ -192,6 +198,12 @@ const SignUp = (props) => {
                     />
                     <_InputText
                         style={styles.TextInput}
+                        placeholder={helpers.getLocale(localize, "login", "customerId")}
+                        onChangeText={value => { setcustomerId(value) }}
+                        value={customerId}
+                    />
+                    <_InputText
+                        style={styles.TextInput}
                         placeholder={helpers.getLocale(localize, "signIn", "phone")}
                         onChangeText={value => setphoneNo(value)}
                         value={phoneNo}
@@ -215,6 +227,7 @@ const SignUp = (props) => {
                         onChangeText={value => setcity(value)}
                         value={city}
                     />
+
                 </View>
                 <View style={{ marginTop: 50 }}>
                     <_Button

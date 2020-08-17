@@ -8,7 +8,7 @@
     "signIn": "SIGN IN",
     "forgotPassword": "Forgot password?",
     "signUp": "SIGN UP",
-    "onSubmit": "Please enter valid username/email-id and password",
+    "onSubmit": "Please  fill all required details",
     "validation_err": "You have entered an invalid username/email-id! "
   },
   "signIn": {
@@ -27,7 +27,7 @@
     "userName": "Username/Email-id",
     "send": "SEND",
     "forget_password": "FORGET PASSWORD",
-    "onSubmit": "Please enter valid username/email-id",
+    "onSubmit": "Please  fill all required details",
     "onSubmitSuccess": "Check your email",
     "validation_err": "You have entered an invalid username/email-id!"
   },
