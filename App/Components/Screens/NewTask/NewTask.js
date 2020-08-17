@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import {
     View,
-    Alert, Image, Text, FlatList
+    Alert, Image, Text, FlatList, Platform
 } from 'react-native';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import { globals, helpers, validators, API } from '../../../Config';
@@ -48,7 +48,7 @@ const NewTask = (props) => {
         if (baseUrl && baseUrl !== undefined) {
             let cb = {
                 success: async (res) => {
-                    console.log({ res })
+                    // console.log({ res })
                     let customer_data = res[0].objects
                     setname(customer_data[0].name)
                     setaddress(customer_data[0].address)
@@ -56,13 +56,16 @@ const NewTask = (props) => {
                     setinitialLoading(false)
                 },
                 error: (err) => {
-                    Alert.alert(err.message)
                     setinitialLoading(false)
+                    setTimeout(() => {
+                        Alert.alert(err.message)
+                    }, 100)
+
                 },
                 complete: () => { },
             };
             let header = helpers.buildHeader();
-            console.log('header', header)
+            // console.log('header', header)
             let data = {
                 "user_id": userAuthdetails.user_id,
                 "token": userAuthdetails.token,
@@ -80,27 +83,30 @@ const NewTask = (props) => {
         if (baseUrl && baseUrl !== undefined) {
             let cb = {
                 success: async (res) => {
-                    console.log({ res })
+                    // console.log({ res })
+                    setloading(false)
                     setTimeout(
                         () => {
-                            setloading(false),
-                                Alert.alert(helpers.getLocale(localize, "newTask", "task_save"));
-
-                        }, 2000
+                            Alert.alert(helpers.getLocale(localize, "newTask", "task_save"));
+                        }, 100
                     )
                     settask_id(res.record_id)
                 },
                 error: (err) => {
                     setloading(false)
-                    Alert.alert("error", err.message)
+                    setTimeout(
+                        () => {
+                            Alert.alert("error", err.message)
+                        }, 100
+                    )
                 },
                 complete: () => {
-                    setloading(false)
+                    // setloading(false)
 
                 },
             };
             let header = helpers.buildHeader();
-            console.log('header', header)
+            // console.log('header', header)
             let newdata = [
                 edit ?
                     {
@@ -117,7 +123,7 @@ const NewTask = (props) => {
                         "title": title,
                     }
             ]
-            console.log('newdata', newdata)
+            // console.log('newdata', newdata)
             let data = {
                 "user_id": userAuthdetails.user_id,
                 "task_actions": newdata,
@@ -165,40 +171,44 @@ const NewTask = (props) => {
         if (baseUrl && baseUrl !== undefined) {
             let cb = {
                 success: async (res) => {
-                    console.log({ res })
-                    Alert.alert(
-                        'Success',
-                        // ' Document uploaded successfully ',
-                        helpers.getLocale(localize, "newTask", "upload_success"),
-                        [
-                            {
-                                text: 'OK', onPress: () => {
-                                    const source = { uri: uri };
-                                    if (image != " ") {
-                                        const item = new Object();
-                                        const arr = [...uploadedImg]
-                                        arr.push(item)
-                                        const img = { source }
-                                        Document.push(item);
-                                        setuploadedImg(arr)
-                                    }
-                                    else {
-                                        const item = new Object();
-                                        const array = [...uploadedDoc]
-                                        array.push(item)
-                                        setuploadedDoc(array)
-                                    }
+                    // console.log({ res })
+                    setloading(false)
+                    setTimeout(() => {
+                        Alert.alert(
+                            'Success',
+                            // ' Document uploaded successfully ',
+                            helpers.getLocale(localize, "newTask", "upload_success"),
+                            [
+                                {
+                                    text: 'OK', onPress: () => {
+                                        const source = { uri: uri };
+                                        if (image != " ") {
+                                            const item = new Object();
+                                            const arr = [...uploadedImg]
+                                            arr.push(item)
+                                            const img = { source }
+                                            Document.push(item);
+                                            setuploadedImg(arr)
+                                        }
+                                        else {
+                                            const item = new Object();
+                                            const array = [...uploadedDoc]
+                                            array.push(item)
+                                            setuploadedDoc(array)
+                                        }
 
-                                    return true
-                                }
-                            },
-                        ]
-                    );
-                    setTimeout(() => { setloading(false) }, 300)
+                                        return true
+                                    }
+                                },
+                            ]
+                        );
+                    }, 100)
                 },
                 error: (err) => {
                     setloading(false)
-                    Alert.alert("Error", " Something went wrong while uploading document")
+                    setTimeout(() => {
+                        Alert.alert("Error", " Something went wrong while uploading document")
+                    }, 100)
                 },
                 complete: () => { },
             };
@@ -207,7 +217,7 @@ const NewTask = (props) => {
                 "user_id": userAuthdetails.user_id,
                 "token": userAuthdetails.token,
                 "task_id": task_id,
-                "filename": fileName,
+                "filename": fileName !== null ? fileName : "abc.jpg",
                 "photo": photo,
                 "api_key": globals.API_KEY,
 
@@ -243,8 +253,15 @@ const NewTask = (props) => {
                 type: [DocumentPicker.types.allFiles]
             })
                 .then(res => {
-                    console.log('res', res, res.uri)
-                    RNFS.readFile(res.uri, "base64").then(result => {
+                    console.log('rest', res, res.uri)
+                    let filepath = ""
+                    if (Platform.OS === "android") {
+                        filepath = res.uri
+                    } else {
+                        let basepath = res.uri.substring(0, res.uri.lastIndexOf("/"));
+                        filepath = basepath + "/" + res.name;
+                    }
+                    RNFS.readFile(filepath, "base64").then(result => {
                         uploadDoc(res.name, res.uri, result, "Doc1 ", " ")
                         setTimeout(() => { setdocument("Doc1") }, 3000)
                     })
@@ -278,10 +295,10 @@ const NewTask = (props) => {
                 },
                 error: (err) => {
                     setloading(false)
+                    props.navigation.navigate('LogIn')
                     setTimeout(() => {
-                        props.navigation.navigate('LogIn')
                         Alert.alert("Error", err.message)
-                    }, 200);
+                    }, 100);
 
                 },
                 complete: () => { },

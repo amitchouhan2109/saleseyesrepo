@@ -355,7 +355,7 @@ export const buildHeader = (headerParams = {}) => {
 export const userAuthdetails = async () => {
   let userAuthdetails;
   await AsyncStorage.getItem('userAuthDetails').then(async (value) => {
-    console.log({ value })
+    // console.log({ value })
     userAuthdetails = await JSON.parse(value);
   });
   return userAuthdetails;
@@ -368,7 +368,7 @@ export const validation = (type, text, pass) => {
 
 
 
-  console.log(text, 0, pass)
+  // console.log(text, 0, pass)
 
   // const regex = /^[A-Za-z]+$/;
   // const passreg = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/
@@ -405,116 +405,6 @@ export const validation = (type, text, pass) => {
     }
   }
 
-  // if (type == 'Name') {
-  //   if (!text) {
-  //     return "user name is Required"
-  //     // getLocale(localize, "validation", "username_Required ") 
-  //   }
-
-  //   else if (regex.test(text)) {
-  //     return ' '
-  //   }
-  //   else {
-  //     return 'First name only contain Alphabet '
-  //   }
-  // }
-  // if (type == 'lastName') {
-  //   if (!text) {
-  //     return 'Last  Name is Required'
-  //   }
-  //   else if (regex.test(text)) {
-  //     return ' '
-  //   }
-  //   else {
-  //     return 'Last Name only contain Alphabet '
-  //   }
-
-
-  // }
-  // else if (type == 'password') {
-  //   if (!text) {
-  //     return 'Password is Required '
-  //   }
-  //   else {
-  //     return ' '
-  //   }
-  //   // else if (text.length < 7) {
-  //   //   return 'Password at least 7 digit Long'
-  //   // }
-
-  //   // else if (passreg.test(text)) {
-  //   //   return ' '
-  //   // }
-  //   // else {
-  //   //   return 'Password should be combination of (A,a,@,1) '
-  //   // }
-  // }
-
-  // else if (type == 'confirmpassword') {
-  //   console.log("conpass", text, "sd", pass)
-  //   if (text == " " || !text) {
-  //     return 'confirm Password is Required '
-  //   }
-  //   else if (pass === text) {
-  //     return " "
-  //   }
-  //   else {
-  //     return 'Password Does not  match '
-  //   }
-  // }
-  // else if (type == 'email') {
-  //   if (text == " " || !text) {
-  //     return 'UserName is Required '
-
-  //   }
-
-  //   else if (emailPattern.test(text)) {
-  //     return " "
-  //   }
-  //   else {
-  //     return 'UserName is Invalid'
-  //   }
-  // }
-  // else if (type == 'emailId') {
-  //   if (text == " " || !text) {
-  //     return 'Email-id is Required '
-  //   }
-
-  //   else if (emailPattern.test(text)) {
-  //     return " "
-  //   }
-  //   else {
-  //     return 'Email-id is Invalid'
-  //   }
-  // }
-  // 
-
-  // else if (type == 'Address') {
-  //   if (!text) {
-  //     return 'Address is Required'
-  //   }
-  //   if (text.length < 10) {
-  //     return 'Address contain at least 10 charcter'
-
-  //   } else {
-  //     return ' '
-
-
-  //   }
-  // }
-
-  // else if (type == 'City') {
-  //   console.warn(" #####", text)
-  //   if (!text) {
-
-  //     return ' City is Required'
-  //   }
-  //   else {
-  //     // Alert.alert('ok')
-  //     return ' '
-  //   }
-
-  // }
 
 
 

@@ -40,15 +40,19 @@ const ForgetPassword = (props) => {
             success: async (res) => {
                 if (res.error === null) {
                     await AsyncStorage.setItem("baseUrl", res.result.ws_url);
-                    forgetPawword()
+                    forgetPassword()
                 } else {
                     setloading(false)
-                    Alert.alert('Error in fetch end Point', 'Authentication failed');
+                    setTimeout(() => {
+                        Alert.alert('Error in fetch end Point', 'Authentication failed');
+                    }, 200)
                 }
             },
             error: (err) => {
                 setloading(false)
-                Alert.alert(err.message);
+                setTimeout(() => {
+                    Alert.alert(err.message);
+                }, 100)
             },
             complete: () => {
                 setloading(false)
@@ -75,24 +79,27 @@ const ForgetPassword = (props) => {
                 if (baseUrl && baseUrl !== undefined) {
                     let cb = {
                         success: async (res) => {
-                            console.log("success res:", res)
+                            // console.log("success res:", res)
                             setloading(false)
-                            Alert.alert(
-                                'Success',
-                                helpers.getLocale(localize, "forgetPassword", "onSubmitSuccess"),
-                                [
-                                    {
-                                        text: 'OK', onPress: () => {
-                                            props.navigation.navigate('LogIn')
-                                        }
-                                    },
-                                ]
-                            );
-
+                            setTimeout(() => {
+                                Alert.alert(
+                                    'Success',
+                                    helpers.getLocale(localize, "forgetPassword", "onSubmitSuccess"),
+                                    [
+                                        {
+                                            text: 'OK', onPress: () => {
+                                                props.navigation.navigate('LogIn')
+                                            }
+                                        },
+                                    ]
+                                );
+                            }, 200)
                         },
                         error: (err) => {
                             setloading(false)
-                            Alert.alert(err.message)
+                            setTimeout(() => {
+                                Alert.alert(err.message)
+                            }, 100)
                         },
                         complete: () => {
                             setloading(false)
@@ -120,7 +127,7 @@ const ForgetPassword = (props) => {
     }
 
     const signinHandler = () => {
-        console.log("signInHandler")
+        // console.log("signInHandler")
     }
 
     return (

@@ -28,7 +28,7 @@
     "send": "SEND",
     "forget_password": "FORGET PASSWORD",
     "onSubmit": "Please enter valid username/email-id",
-    "onSubmitSuccess": "Check your email",
+    "onSubmitSuccess": "Please check your email",
     "validation_err": "You have entered an invalid username/email-id!"
   },
   "changePassword": {

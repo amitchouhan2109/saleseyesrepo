@@ -102,7 +102,7 @@ const Tasks = (props) => {
             success: async (res) => {
                 dispatch(setTasks({ res }))
                 setTaskLoader(false)
-                console.log({ res })
+                // console.log({ res })
                 const TaskList = res[0].tasks
                 TaskList.sort(function (a, b) {
                     return (b.id - a.id)
@@ -116,19 +116,22 @@ const Tasks = (props) => {
             error: (err) => {
                 setTaskLoader(false)
                 if (err.type === 'AUTHORIZATION' || err.message === 'Not logged in / Wrong password or username / Token expired') {
-
-                    Alert.alert(" Error ", err.message,
-                        [
-                            {
-                                text: 'OK', onPress: () => {
-                                    // signout()
-                                    props.navigation.navigate('LogIn')
-                                }
-                            },
-                        ])
+                    setTimeout(() => {
+                        Alert.alert(" Error ", err.message,
+                            [
+                                {
+                                    text: 'OK', onPress: () => {
+                                        // signout()
+                                        props.navigation.navigate('LogIn')
+                                    }
+                                },
+                            ])
+                    }, 100)
                 }
                 else {
-                    Alert.alert(err.message)
+                    setTimeout(() => {
+                        Alert.alert(err.message)
+                    }, 100)
                 }
             },
 

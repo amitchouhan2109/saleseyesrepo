@@ -12,7 +12,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 function MainNavigator() {
 
-    console.log("MainNavigator")
+    // console.log("MainNavigator")
     const StackNavigator = createStackNavigator()
     return (
         <NavigationContainer>

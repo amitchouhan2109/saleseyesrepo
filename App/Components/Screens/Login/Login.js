@@ -109,10 +109,14 @@ const Login = (props) => {
             error: (err) => {
                 setloading(false)
                 if (err.type === 'AUTHORIZATION' || err.message === 'Not logged in / Wrong password or username / Token expired') {
-                    Alert.alert("Wrong username or password")
+                    setTimeout(() => {
+                        Alert.alert("Wrong username or password")
+                    }, 100)
                 }
                 else {
-                    Alert.alert(err.message)
+                    setTimeout(() => {
+                        Alert.alert(err.message)
+                    }, 100)
                 }
 
             },
@@ -139,15 +143,17 @@ const Login = (props) => {
                     await AsyncStorage.setItem("baseUrl", res.result.ws_url);
                     logInUser()
                 } else {
-                    Alert.alert('Error in fetch end Point', 'Authentication failed');
                     setloading(false)
+                    setTimeout(() => {
+                        Alert.alert('Error in fetch end Point', 'Authentication failed');
+                    }, 100);
                 }
             },
             error: (err) => {
                 setloading(false)
                 setTimeout(() => {
                     Alert.alert("Error", err.message)
-                }, 200);
+                }, 100);
             },
             complete: () => { setloading(false) },
         };

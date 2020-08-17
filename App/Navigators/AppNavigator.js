@@ -22,12 +22,12 @@ function AppNavigator() {
   }, [])
 
   const getRememberedUser = async () => {
-    console.log("AppNavigator useEffect")
+    // console.log("AppNavigator useEffect")
     const remeber = await AsyncStorage.getItem('RemeberMe');
 
     if (remeber != null) {
       const remebervalue = JSON.parse(remeber)
-      console.log("AppNavigator remebervalue", remebervalue)
+      // console.log("AppNavigator remebervalue", remebervalue)
       if (remebervalue)
         setintialRout('Tasks')
       else

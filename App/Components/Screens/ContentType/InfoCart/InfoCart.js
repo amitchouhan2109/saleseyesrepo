@@ -53,7 +53,7 @@ const InfoCart = (props) => {
 
 
     const signinHandler = () => {
-        console.log("signInHandler")
+        // console.log("signInHandler")
     }
 
     const infoRow = (tag, value, fontStyle = {}) => {
