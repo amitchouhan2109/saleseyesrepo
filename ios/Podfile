@@ -11,6 +11,8 @@ target 'saleseyes' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+
   target 'saleseyesTests' do
     inherit! :complete
     # Pods for testing
