@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* saleseyesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* saleseyesTests.m */; };
+		00E356F31AD99517003FC87E /* TaskeriumCPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TaskeriumCPTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* saleseyesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* saleseyesTests.m */; };
-		5C54838CC51ABF79418C49FA /* libPods-saleseyes-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6510A38C79DFBB82FBE62242 /* libPods-saleseyes-tvOSTests.a */; };
+		2DCD954D1E0B4F2C00145EB5 /* TaskeriumCPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TaskeriumCPTests.m */; };
+		5C54838CC51ABF79418C49FA /* libPods-TaskeriumCP-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6510A38C79DFBB82FBE62242 /* libPods-TaskeriumCP-tvOSTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		B14E0DE2C56BCE00D61FFBB5 /* libPods-saleseyes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F02A4DBDF9D3386590B6D6B6 /* libPods-saleseyes.a */; };
-		C99B8529C9C5B0014FF99E68 /* libPods-saleseyes-saleseyesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E28FA13B071CB67EA9B048 /* libPods-saleseyes-saleseyesTests.a */; };
-		E5D5F652AF3953A16BE63EC4 /* libPods-saleseyes-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E5CFA99281F1E0483205DE /* libPods-saleseyes-tvOS.a */; };
+		B14E0DE2C56BCE00D61FFBB5 /* libPods-TaskeriumCP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F02A4DBDF9D3386590B6D6B6 /* libPods-TaskeriumCP.a */; };
+		C99B8529C9C5B0014FF99E68 /* libPods-TaskeriumCP-TaskeriumCPTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E28FA13B071CB67EA9B048 /* libPods-TaskeriumCP-TaskeriumCPTests.a */; };
+		E5D5F652AF3953A16BE63EC4 /* libPods-TaskeriumCP-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E5CFA99281F1E0483205DE /* libPods-TaskeriumCP-tvOS.a */; };
 		E9F566BD24E418EB0057DD74 /* MyriadPro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = E9F566B224E418CD0057DD74 /* MyriadPro-Black.otf */; };
 		E9F566BE24E418F50057DD74 /* MyriadPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E9F566B024E418CD0057DD74 /* MyriadPro-Bold.otf */; };
 		E9F566BF24E418F50057DD74 /* MyriadPro-BoldCond.otf in Resources */ = {isa = PBXBuildFile; fileRef = E9F566BA24E418CD0057DD74 /* MyriadPro-BoldCond.otf */; };
@@ -57,59 +57,59 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = saleseyes;
+			remoteInfo = TaskeriumCP;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "saleseyes-tvOS";
+			remoteInfo = "TaskeriumCP-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* saleseyesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = saleseyesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* TaskeriumCPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskeriumCPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* saleseyesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = saleseyesTests.m; sourceTree = "<group>"; };
-		0FAC092D547085A113B1EB22 /* Pods-saleseyes-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saleseyes-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-saleseyes-tvOSTests/Pods-saleseyes-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		11A821FA407DDC0ED765A1CF /* Pods-saleseyes-saleseyesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saleseyes-saleseyesTests.debug.xcconfig"; path = "Target Support Files/Pods-saleseyes-saleseyesTests/Pods-saleseyes-saleseyesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* saleseyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = saleseyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = saleseyes/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = saleseyes/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = saleseyes/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = saleseyes/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = saleseyes/main.m; sourceTree = "<group>"; };
-		27E5CFA99281F1E0483205DE /* libPods-saleseyes-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-saleseyes-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E47B1E0B4A5D006451C7 /* saleseyes-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "saleseyes-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* saleseyes-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "saleseyes-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		38E28FA13B071CB67EA9B048 /* libPods-saleseyes-saleseyesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-saleseyes-saleseyesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		40A050110C2738F9B5EEB499 /* Pods-saleseyes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saleseyes.release.xcconfig"; path = "Target Support Files/Pods-saleseyes/Pods-saleseyes.release.xcconfig"; sourceTree = "<group>"; };
-		4A7EC80492AF0B234FAD0337 /* Pods-saleseyes-saleseyesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saleseyes-saleseyesTests.release.xcconfig"; path = "Target Support Files/Pods-saleseyes-saleseyesTests/Pods-saleseyes-saleseyesTests.release.xcconfig"; sourceTree = "<group>"; };
-		6510A38C79DFBB82FBE62242 /* libPods-saleseyes-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-saleseyes-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A31785E13A7CA5F200137B0 /* Pods-saleseyes-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saleseyes-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-saleseyes-tvOSTests/Pods-saleseyes-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		7DB8B6D32A75EF498B05AFE7 /* Pods-saleseyes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saleseyes.debug.xcconfig"; path = "Target Support Files/Pods-saleseyes/Pods-saleseyes.debug.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = saleseyes/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		83B1FFCC548DA4CC32E2D942 /* Pods-saleseyes-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saleseyes-tvOS.release.xcconfig"; path = "Target Support Files/Pods-saleseyes-tvOS/Pods-saleseyes-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		AAF3B6C531193C00AECD209C /* Pods-saleseyes-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saleseyes-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-saleseyes-tvOS/Pods-saleseyes-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		E9F566AF24E418CC0057DD74 /* MyriadPro-CondIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-CondIt.otf"; path = "../../../../../Downloads/Taskerium 2/Fontas_Myriad_pro/MyriadPro-CondIt.otf"; sourceTree = "<group>"; };
-		E9F566B024E418CD0057DD74 /* MyriadPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-Bold.otf"; path = "../../../../../Downloads/Taskerium 2/Fontas_Myriad_pro/MyriadPro-Bold.otf"; sourceTree = "<group>"; };
-		E9F566B124E418CD0057DD74 /* MyriadPro-LightIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-LightIt.otf"; path = "../../../../../Downloads/Taskerium 2/Fontas_Myriad_pro/MyriadPro-LightIt.otf"; sourceTree = "<group>"; };
-		E9F566B224E418CD0057DD74 /* MyriadPro-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-Black.otf"; path = "../../../../../Downloads/Taskerium 2/Fontas_Myriad_pro/MyriadPro-Black.otf"; sourceTree = "<group>"; };
-		E9F566B324E418CD0057DD74 /* MyriadPro-Cond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-Cond.otf"; path = "../../../../../Downloads/Taskerium 2/Fontas_Myriad_pro/MyriadPro-Cond.otf"; sourceTree = "<group>"; };
-		E9F566B424E418CD0057DD74 /* MyriadPro-BoldCondIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-BoldCondIt.otf"; path = "../../../../../Downloads/Taskerium 2/Fontas_Myriad_pro/MyriadPro-BoldCondIt.otf"; sourceTree = "<group>"; };
-		E9F566B524E418CD0057DD74 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-Regular.otf"; path = "../../../../../Downloads/Taskerium 2/Fontas_Myriad_pro/MyriadPro-Regular.otf"; sourceTree = "<group>"; };
-		E9F566B624E418CD0057DD74 /* MyriadPro-BlackCond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-BlackCond.otf"; path = "../../../../../Downloads/Taskerium 2/Fontas_Myriad_pro/MyriadPro-BlackCond.otf"; sourceTree = "<group>"; };
-		E9F566B724E418CD0057DD74 /* MyriadPro-BoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-BoldIt.otf"; path = "../../../../../Downloads/Taskerium 2/Fontas_Myriad_pro/MyriadPro-BoldIt.otf"; sourceTree = "<group>"; };
-		E9F566B824E418CD0057DD74 /* MyriadPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-Semibold.otf"; path = "../../../../../Downloads/Taskerium 2/Fontas_Myriad_pro/MyriadPro-Semibold.otf"; sourceTree = "<group>"; };
-		E9F566B924E418CD0057DD74 /* MyriadPro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-Light.otf"; path = "../../../../../Downloads/Taskerium 2/Fontas_Myriad_pro/MyriadPro-Light.otf"; sourceTree = "<group>"; };
-		E9F566BA24E418CD0057DD74 /* MyriadPro-BoldCond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-BoldCond.otf"; path = "../../../../../Downloads/Taskerium 2/Fontas_Myriad_pro/MyriadPro-BoldCond.otf"; sourceTree = "<group>"; };
-		E9F566BB24E418CD0057DD74 /* MyriadPro-SemiboldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-SemiboldIt.otf"; path = "../../../../../Downloads/Taskerium 2/Fontas_Myriad_pro/MyriadPro-SemiboldIt.otf"; sourceTree = "<group>"; };
-		E9F566BC24E418CD0057DD74 /* MyriadPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-It.otf"; path = "../../../../../Downloads/Taskerium 2/Fontas_Myriad_pro/MyriadPro-It.otf"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* TaskeriumCPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskeriumCPTests.m; sourceTree = "<group>"; };
+		0FAC092D547085A113B1EB22 /* Pods-TaskeriumCP-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskeriumCP-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-TaskeriumCP-tvOSTests/Pods-TaskeriumCP-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		11A821FA407DDC0ED765A1CF /* Pods-TaskeriumCP-TaskeriumCPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskeriumCP-TaskeriumCPTests.debug.xcconfig"; path = "Target Support Files/Pods-TaskeriumCP-TaskeriumCPTests/Pods-TaskeriumCP-TaskeriumCPTests.debug.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* TaskeriumCP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskeriumCP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = TaskeriumCP/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = TaskeriumCP/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TaskeriumCP/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TaskeriumCP/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = TaskeriumCP/main.m; sourceTree = "<group>"; };
+		27E5CFA99281F1E0483205DE /* libPods-TaskeriumCP-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaskeriumCP-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E47B1E0B4A5D006451C7 /* TaskeriumCP-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskeriumCP-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* TaskeriumCP-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TaskeriumCP-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38E28FA13B071CB67EA9B048 /* libPods-TaskeriumCP-TaskeriumCPTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaskeriumCP-TaskeriumCPTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40A050110C2738F9B5EEB499 /* Pods-TaskeriumCP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskeriumCP.release.xcconfig"; path = "Target Support Files/Pods-TaskeriumCP/Pods-TaskeriumCP.release.xcconfig"; sourceTree = "<group>"; };
+		4A7EC80492AF0B234FAD0337 /* Pods-TaskeriumCP-TaskeriumCPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskeriumCP-TaskeriumCPTests.release.xcconfig"; path = "Target Support Files/Pods-TaskeriumCP-TaskeriumCPTests/Pods-TaskeriumCP-TaskeriumCPTests.release.xcconfig"; sourceTree = "<group>"; };
+		6510A38C79DFBB82FBE62242 /* libPods-TaskeriumCP-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaskeriumCP-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A31785E13A7CA5F200137B0 /* Pods-TaskeriumCP-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskeriumCP-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-TaskeriumCP-tvOSTests/Pods-TaskeriumCP-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		7DB8B6D32A75EF498B05AFE7 /* Pods-TaskeriumCP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskeriumCP.debug.xcconfig"; path = "Target Support Files/Pods-TaskeriumCP/Pods-TaskeriumCP.debug.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = TaskeriumCP/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		83B1FFCC548DA4CC32E2D942 /* Pods-TaskeriumCP-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskeriumCP-tvOS.release.xcconfig"; path = "Target Support Files/Pods-TaskeriumCP-tvOS/Pods-TaskeriumCP-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		AAF3B6C531193C00AECD209C /* Pods-TaskeriumCP-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskeriumCP-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-TaskeriumCP-tvOS/Pods-TaskeriumCP-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		E9F566AF24E418CC0057DD74 /* MyriadPro-CondIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-CondIt.otf"; path = "../../../../../Downloads/TaskeriumCP 2/Fontas_Myriad_pro/MyriadPro-CondIt.otf"; sourceTree = "<group>"; };
+		E9F566B024E418CD0057DD74 /* MyriadPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-Bold.otf"; path = "../../../../../Downloads/TaskeriumCP 2/Fontas_Myriad_pro/MyriadPro-Bold.otf"; sourceTree = "<group>"; };
+		E9F566B124E418CD0057DD74 /* MyriadPro-LightIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-LightIt.otf"; path = "../../../../../Downloads/TaskeriumCP 2/Fontas_Myriad_pro/MyriadPro-LightIt.otf"; sourceTree = "<group>"; };
+		E9F566B224E418CD0057DD74 /* MyriadPro-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-Black.otf"; path = "../../../../../Downloads/TaskeriumCP 2/Fontas_Myriad_pro/MyriadPro-Black.otf"; sourceTree = "<group>"; };
+		E9F566B324E418CD0057DD74 /* MyriadPro-Cond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-Cond.otf"; path = "../../../../../Downloads/TaskeriumCP 2/Fontas_Myriad_pro/MyriadPro-Cond.otf"; sourceTree = "<group>"; };
+		E9F566B424E418CD0057DD74 /* MyriadPro-BoldCondIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-BoldCondIt.otf"; path = "../../../../../Downloads/TaskeriumCP 2/Fontas_Myriad_pro/MyriadPro-BoldCondIt.otf"; sourceTree = "<group>"; };
+		E9F566B524E418CD0057DD74 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-Regular.otf"; path = "../../../../../Downloads/TaskeriumCP 2/Fontas_Myriad_pro/MyriadPro-Regular.otf"; sourceTree = "<group>"; };
+		E9F566B624E418CD0057DD74 /* MyriadPro-BlackCond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-BlackCond.otf"; path = "../../../../../Downloads/TaskeriumCP 2/Fontas_Myriad_pro/MyriadPro-BlackCond.otf"; sourceTree = "<group>"; };
+		E9F566B724E418CD0057DD74 /* MyriadPro-BoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-BoldIt.otf"; path = "../../../../../Downloads/TaskeriumCP 2/Fontas_Myriad_pro/MyriadPro-BoldIt.otf"; sourceTree = "<group>"; };
+		E9F566B824E418CD0057DD74 /* MyriadPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-Semibold.otf"; path = "../../../../../Downloads/TaskeriumCP 2/Fontas_Myriad_pro/MyriadPro-Semibold.otf"; sourceTree = "<group>"; };
+		E9F566B924E418CD0057DD74 /* MyriadPro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-Light.otf"; path = "../../../../../Downloads/TaskeriumCP 2/Fontas_Myriad_pro/MyriadPro-Light.otf"; sourceTree = "<group>"; };
+		E9F566BA24E418CD0057DD74 /* MyriadPro-BoldCond.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-BoldCond.otf"; path = "../../../../../Downloads/TaskeriumCP 2/Fontas_Myriad_pro/MyriadPro-BoldCond.otf"; sourceTree = "<group>"; };
+		E9F566BB24E418CD0057DD74 /* MyriadPro-SemiboldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-SemiboldIt.otf"; path = "../../../../../Downloads/TaskeriumCP 2/Fontas_Myriad_pro/MyriadPro-SemiboldIt.otf"; sourceTree = "<group>"; };
+		E9F566BC24E418CD0057DD74 /* MyriadPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-It.otf"; path = "../../../../../Downloads/TaskeriumCP 2/Fontas_Myriad_pro/MyriadPro-It.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		F02A4DBDF9D3386590B6D6B6 /* libPods-saleseyes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-saleseyes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F02A4DBDF9D3386590B6D6B6 /* libPods-TaskeriumCP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaskeriumCP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECD3DCC7A4E43C995EA5871 /* AntDesign.ttf */ = {isa = PBXFileReference; name = "AntDesign.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		665F3F1466584E6C9C74619B /* Entypo.ttf */ = {isa = PBXFileReference; name = "Entypo.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		1289786CDA6F4260B1D79B87 /* EvilIcons.ttf */ = {isa = PBXFileReference; name = "EvilIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
@@ -133,7 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C99B8529C9C5B0014FF99E68 /* libPods-saleseyes-saleseyesTests.a in Frameworks */,
+				C99B8529C9C5B0014FF99E68 /* libPods-TaskeriumCP-TaskeriumCPTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B14E0DE2C56BCE00D61FFBB5 /* libPods-saleseyes.a in Frameworks */,
+				B14E0DE2C56BCE00D61FFBB5 /* libPods-TaskeriumCP.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5D5F652AF3953A16BE63EC4 /* libPods-saleseyes-tvOS.a in Frameworks */,
+				E5D5F652AF3953A16BE63EC4 /* libPods-TaskeriumCP-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,20 +157,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C54838CC51ABF79418C49FA /* libPods-saleseyes-tvOSTests.a in Frameworks */,
+				5C54838CC51ABF79418C49FA /* libPods-TaskeriumCP-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* saleseyesTests */ = {
+		00E356EF1AD99517003FC87E /* TaskeriumCPTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* saleseyesTests.m */,
+				00E356F21AD99517003FC87E /* TaskeriumCPTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = saleseyesTests;
+			path = TaskeriumCPTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -181,7 +181,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* saleseyes */ = {
+		13B07FAE1A68108700A75B9A /* TaskeriumCP */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -192,7 +192,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = saleseyes;
+			name = TaskeriumCP;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -200,10 +200,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				F02A4DBDF9D3386590B6D6B6 /* libPods-saleseyes.a */,
-				38E28FA13B071CB67EA9B048 /* libPods-saleseyes-saleseyesTests.a */,
-				27E5CFA99281F1E0483205DE /* libPods-saleseyes-tvOS.a */,
-				6510A38C79DFBB82FBE62242 /* libPods-saleseyes-tvOSTests.a */,
+				F02A4DBDF9D3386590B6D6B6 /* libPods-TaskeriumCP.a */,
+				38E28FA13B071CB67EA9B048 /* libPods-TaskeriumCP-TaskeriumCPTests.a */,
+				27E5CFA99281F1E0483205DE /* libPods-TaskeriumCP-tvOS.a */,
+				6510A38C79DFBB82FBE62242 /* libPods-TaskeriumCP-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -211,14 +211,14 @@
 		30CFF95CD69C25271F0E8782 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7DB8B6D32A75EF498B05AFE7 /* Pods-saleseyes.debug.xcconfig */,
-				40A050110C2738F9B5EEB499 /* Pods-saleseyes.release.xcconfig */,
-				11A821FA407DDC0ED765A1CF /* Pods-saleseyes-saleseyesTests.debug.xcconfig */,
-				4A7EC80492AF0B234FAD0337 /* Pods-saleseyes-saleseyesTests.release.xcconfig */,
-				AAF3B6C531193C00AECD209C /* Pods-saleseyes-tvOS.debug.xcconfig */,
-				83B1FFCC548DA4CC32E2D942 /* Pods-saleseyes-tvOS.release.xcconfig */,
-				0FAC092D547085A113B1EB22 /* Pods-saleseyes-tvOSTests.debug.xcconfig */,
-				7A31785E13A7CA5F200137B0 /* Pods-saleseyes-tvOSTests.release.xcconfig */,
+				7DB8B6D32A75EF498B05AFE7 /* Pods-TaskeriumCP.debug.xcconfig */,
+				40A050110C2738F9B5EEB499 /* Pods-TaskeriumCP.release.xcconfig */,
+				11A821FA407DDC0ED765A1CF /* Pods-TaskeriumCP-TaskeriumCPTests.debug.xcconfig */,
+				4A7EC80492AF0B234FAD0337 /* Pods-TaskeriumCP-TaskeriumCPTests.release.xcconfig */,
+				AAF3B6C531193C00AECD209C /* Pods-TaskeriumCP-tvOS.debug.xcconfig */,
+				83B1FFCC548DA4CC32E2D942 /* Pods-TaskeriumCP-tvOS.release.xcconfig */,
+				0FAC092D547085A113B1EB22 /* Pods-TaskeriumCP-tvOSTests.debug.xcconfig */,
+				7A31785E13A7CA5F200137B0 /* Pods-TaskeriumCP-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -234,9 +234,9 @@
 			isa = PBXGroup;
 			children = (
 				E9F566AE24E418A10057DD74 /* Fonts */,
-				13B07FAE1A68108700A75B9A /* saleseyes */,
+				13B07FAE1A68108700A75B9A /* TaskeriumCP */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* saleseyesTests */,
+				00E356EF1AD99517003FC87E /* TaskeriumCPTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				30CFF95CD69C25271F0E8782 /* Pods */,
@@ -250,10 +250,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* saleseyes.app */,
-				00E356EE1AD99517003FC87E /* saleseyesTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* saleseyes-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* saleseyes-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* TaskeriumCP.app */,
+				00E356EE1AD99517003FC87E /* TaskeriumCPTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* TaskeriumCP-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* TaskeriumCP-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -306,9 +306,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* saleseyesTests */ = {
+		00E356ED1AD99517003FC87E /* TaskeriumCPTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "saleseyesTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TaskeriumCPTests" */;
 			buildPhases = (
 				418AEE61880BCE6BE8AE9A8C /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -321,14 +321,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = saleseyesTests;
-			productName = saleseyesTests;
-			productReference = 00E356EE1AD99517003FC87E /* saleseyesTests.xctest */;
+			name = TaskeriumCPTests;
+			productName = TaskeriumCPTests;
+			productReference = 00E356EE1AD99517003FC87E /* TaskeriumCPTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* saleseyes */ = {
+		13B07F861A680F5B00A75B9A /* TaskeriumCP */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "saleseyes" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TaskeriumCP" */;
 			buildPhases = (
 				72DD2ABFBB12E68C1E1AF0C9 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -342,14 +342,14 @@
 			);
 			dependencies = (
 			);
-			name = saleseyes;
-			productName = saleseyes;
-			productReference = 13B07F961A680F5B00A75B9A /* saleseyes.app */;
+			name = TaskeriumCP;
+			productName = TaskeriumCP;
+			productReference = 13B07F961A680F5B00A75B9A /* TaskeriumCP.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* saleseyes-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* TaskeriumCP-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "saleseyes-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "TaskeriumCP-tvOS" */;
 			buildPhases = (
 				537EE46EF05B4EB7C3C6D560 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -362,14 +362,14 @@
 			);
 			dependencies = (
 			);
-			name = "saleseyes-tvOS";
-			productName = "saleseyes-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* saleseyes-tvOS.app */;
+			name = "TaskeriumCP-tvOS";
+			productName = "TaskeriumCP-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* TaskeriumCP-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* saleseyes-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* TaskeriumCP-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "saleseyes-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "TaskeriumCP-tvOSTests" */;
 			buildPhases = (
 				6136A3B7C414766FBA3FEB86 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -381,9 +381,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "saleseyes-tvOSTests";
-			productName = "saleseyes-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* saleseyes-tvOSTests.xctest */;
+			name = "TaskeriumCP-tvOSTests";
+			productName = "TaskeriumCP-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* TaskeriumCP-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -414,7 +414,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "saleseyes" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "TaskeriumCP" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -427,10 +427,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* saleseyes */,
-				00E356ED1AD99517003FC87E /* saleseyesTests */,
-				2D02E47A1E0B4A5D006451C7 /* saleseyes-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* saleseyes-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* TaskeriumCP */,
+				00E356ED1AD99517003FC87E /* TaskeriumCPTests */,
+				2D02E47A1E0B4A5D006451C7 /* TaskeriumCP-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* TaskeriumCP-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -533,7 +533,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-saleseyes-saleseyesTests/Pods-saleseyes-saleseyesTests-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TaskeriumCP-TaskeriumCPTests/Pods-TaskeriumCP-TaskeriumCPTests-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -574,7 +574,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-saleseyes-saleseyesTests/Pods-saleseyes-saleseyesTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TaskeriumCP-TaskeriumCPTests/Pods-TaskeriumCP-TaskeriumCPTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		418AEE61880BCE6BE8AE9A8C /* [CP] Check Pods Manifest.lock */ = {
@@ -592,7 +592,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-saleseyes-saleseyesTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TaskeriumCP-TaskeriumCPTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -614,7 +614,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-saleseyes-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TaskeriumCP-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -636,7 +636,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-saleseyes-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TaskeriumCP-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -658,7 +658,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-saleseyes-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TaskeriumCP-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -671,7 +671,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-saleseyes/Pods-saleseyes-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TaskeriumCP/Pods-TaskeriumCP-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -712,7 +712,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-saleseyes/Pods-saleseyes-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TaskeriumCP/Pods-TaskeriumCP-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -760,7 +760,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* saleseyesTests.m in Sources */,
+				00E356F31AD99517003FC87E /* TaskeriumCPTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -786,7 +786,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* saleseyesTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* TaskeriumCPTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,12 +795,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* saleseyes */;
+			target = 13B07F861A680F5B00A75B9A /* TaskeriumCP */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* saleseyes-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* TaskeriumCP-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -808,14 +808,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11A821FA407DDC0ED765A1CF /* Pods-saleseyes-saleseyesTests.debug.xcconfig */;
+			baseConfigurationReference = 11A821FA407DDC0ED765A1CF /* Pods-TaskeriumCP-TaskeriumCPTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = saleseyesTests/Info.plist;
+				INFOPLIST_FILE = TaskeriumCPTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -825,17 +825,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/saleseyes.app/saleseyes";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaskeriumCP.app/TaskeriumCP";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A7EC80492AF0B234FAD0337 /* Pods-saleseyes-saleseyesTests.release.xcconfig */;
+			baseConfigurationReference = 4A7EC80492AF0B234FAD0337 /* Pods-TaskeriumCP-TaskeriumCPTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = saleseyesTests/Info.plist;
+				INFOPLIST_FILE = TaskeriumCPTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -845,13 +845,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/saleseyes.app/saleseyes";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaskeriumCP.app/TaskeriumCP";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DB8B6D32A75EF498B05AFE7 /* Pods-saleseyes.debug.xcconfig */;
+			baseConfigurationReference = 7DB8B6D32A75EF498B05AFE7 /* Pods-TaskeriumCP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -860,15 +860,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8U8LW972MB;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = saleseyes/Info.plist;
+				INFOPLIST_FILE = TaskeriumCP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ios.saleseyes;
-				PRODUCT_NAME = saleseyes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TaskeriumCP;
+				PRODUCT_NAME = TaskeriumCP;
 				PROVISIONING_PROFILE_SPECIFIER = SalesEyeIOSDev;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -878,7 +878,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40A050110C2738F9B5EEB499 /* Pods-saleseyes.release.xcconfig */;
+			baseConfigurationReference = 40A050110C2738F9B5EEB499 /* Pods-TaskeriumCP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -886,15 +886,15 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8U8LW972MB;
-				INFOPLIST_FILE = saleseyes/Info.plist;
+				INFOPLIST_FILE = TaskeriumCP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ios.saleseyes;
-				PRODUCT_NAME = saleseyes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TaskeriumCP;
+				PRODUCT_NAME = TaskeriumCP;
 				PROVISIONING_PROFILE_SPECIFIER = SalesEyeIOSDev;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -903,7 +903,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AAF3B6C531193C00AECD209C /* Pods-saleseyes-tvOS.debug.xcconfig */;
+			baseConfigurationReference = AAF3B6C531193C00AECD209C /* Pods-TaskeriumCP-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -914,14 +914,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "saleseyes-tvOS/Info.plist";
+				INFOPLIST_FILE = "TaskeriumCP-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.saleseyes-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.TaskeriumCP-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -931,7 +931,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83B1FFCC548DA4CC32E2D942 /* Pods-saleseyes-tvOS.release.xcconfig */;
+			baseConfigurationReference = 83B1FFCC548DA4CC32E2D942 /* Pods-TaskeriumCP-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -942,14 +942,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "saleseyes-tvOS/Info.plist";
+				INFOPLIST_FILE = "TaskeriumCP-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.saleseyes-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.TaskeriumCP-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -959,7 +959,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FAC092D547085A113B1EB22 /* Pods-saleseyes-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 0FAC092D547085A113B1EB22 /* Pods-TaskeriumCP-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -969,24 +969,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "saleseyes-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "TaskeriumCP-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.saleseyes-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.TaskeriumCP-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/saleseyes-tvOS.app/saleseyes-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaskeriumCP-tvOS.app/TaskeriumCP-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A31785E13A7CA5F200137B0 /* Pods-saleseyes-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 7A31785E13A7CA5F200137B0 /* Pods-TaskeriumCP-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -996,17 +996,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "saleseyes-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "TaskeriumCP-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.saleseyes-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.TaskeriumCP-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/saleseyes-tvOS.app/saleseyes-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaskeriumCP-tvOS.app/TaskeriumCP-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -1127,7 +1127,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "saleseyesTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TaskeriumCPTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -1136,7 +1136,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "saleseyes" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TaskeriumCP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -1145,7 +1145,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "saleseyes-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "TaskeriumCP-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -1154,7 +1154,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "saleseyes-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "TaskeriumCP-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -1163,7 +1163,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "saleseyes" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "TaskeriumCP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

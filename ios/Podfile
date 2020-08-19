@@ -3,7 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'saleseyes' do
+target 'TaskeriumCP' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
@@ -13,7 +13,7 @@ target 'saleseyes' do
 
   pod 'react-native-maps', :path => '../node_modules/react-native-maps'
 
-  target 'saleseyesTests' do
+  target 'TaskeriumCPTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -28,10 +28,10 @@ target 'saleseyes' do
   end
 end
 
-target 'saleseyes-tvOS' do
-  # Pods for saleseyes-tvOS
+target 'TaskeriumCP-tvOS' do
+  # Pods for TaskeriumCP-tvOS
 
-  target 'saleseyes-tvOSTests' do
+  target 'TaskeriumCP-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
