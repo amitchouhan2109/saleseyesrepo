@@ -51,9 +51,9 @@ const _Header = (props) => {
                                         <MenuOption text='Change Password'
                                             onSelect={props.onPress ? () => props.onPress() : null}
                                         />
-                                        <MenuOption text='Language'
+                                        {/* <MenuOption text='Language'
                                         // onSelect={() => this.setState({ renderer: SlideInMenu })}
-                                        />
+                                        /> */}
                                         <MenuOption text='Sign Out' customStyles={{}}
                                             onSelect={props.onPress_signout ? () => props.onPress_signout() : null}
 
