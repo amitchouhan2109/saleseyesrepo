@@ -8,6 +8,8 @@ import ForgetPassword from "../Components/Screens/ForgetPassword/ForgetPassword"
 import Tasks from "../Components/Screens/Task/Tasks";
 import Task from "../Components/Screens/Task/Task";
 import NewTask from "../Components/Screens/NewTask/NewTask";
+import AddressLocation from '../Components/Screens/map'
+
 import AsyncStorage from '@react-native-community/async-storage';
 
 function MainNavigator() {
@@ -30,6 +32,8 @@ function MainNavigator() {
                 <StackNavigator.Screen name="ForgetPassword" component={ForgetPassword} />
                 <StackNavigator.Screen name="Task" component={Task} />
                 <StackNavigator.Screen name="NewTask" component={NewTask} />
+                <StackNavigator.Screen name="AddressLocation" component={AddressLocation} />
+
             </StackNavigator.Navigator>
         </NavigationContainer>
     );

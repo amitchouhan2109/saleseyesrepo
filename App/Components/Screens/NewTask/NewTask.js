@@ -19,7 +19,7 @@ import ImagePicker from 'react-native-image-picker';
 import DocumentPicker from 'react-native-document-picker';
 import { StackActions, CommonActions } from "@react-navigation/native";
 import RNFS from 'react-native-fs'
-
+import AddressLocation from '../map'
 
 const NewTask = (props) => {
     const localize = useSelector(state => state.localize);
@@ -311,6 +311,10 @@ const NewTask = (props) => {
 
     }
 
+    const addresLocation = () => {
+        Alert.alert("hello")
+    }
+
 
     return (
         <View style={[mainStyle.rootView, styles.container]}>
@@ -350,6 +354,10 @@ const NewTask = (props) => {
                             onChangeText={value => {
                                 setaddress(value), onEdit()
                             }}
+                            callback={() => props.navigation.navigate("AddressLocation")
+                                // { AddressLocation() }
+                                // Alert.alert("hi")}
+                            }
                         />
                         <_InputText
                             style={styles.TextInput1}
