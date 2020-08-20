@@ -26,7 +26,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import { MenuProvider } from 'react-native-popup-menu';
-
+import { Root } from "native-base";
 
 import { Provider } from 'react-redux'
 import configureStore from './Redux/Stores/configureStore';
@@ -140,8 +140,11 @@ const App: () => React$Node = () => {
 
     <Provider store={store}>
       <MenuProvider>
-        <Main />
+        <Root>
+          <Main />
+        </Root>
       </MenuProvider>
+
     </Provider>
   );
 };

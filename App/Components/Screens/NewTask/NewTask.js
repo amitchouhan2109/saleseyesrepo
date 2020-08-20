@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import {
     View,
-    Alert, Image, Text, FlatList
+    Alert, Image, Text, FlatList, TouchableOpacity
 } from 'react-native';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import { globals, helpers, validators, API } from '../../../Config';
@@ -15,11 +15,13 @@ import _Header from '../../Custom/Header/_Header';
 import _PairButton from '../../Custom/Button/_PairButton';
 import AsyncStorage from '@react-native-community/async-storage';
 import Loader from '../../Custom/Loader/Loader'
-import ImagePicker from 'react-native-image-picker';
+// import ImagePicker from 'react-native-image-picker';
 import DocumentPicker from 'react-native-document-picker';
 import { StackActions, CommonActions } from "@react-navigation/native";
 import RNFS from 'react-native-fs'
 import AddressLocation from '../map'
+import ImagePicker1 from 'react-native-image-crop-picker';
+import { Container, Header, Button, Content, ActionSheet } from "native-base";
 
 const NewTask = (props) => {
     const localize = useSelector(state => state.localize);
@@ -37,9 +39,21 @@ const NewTask = (props) => {
     const [initialLoading, setinitialLoading] = useState(true);
     const [loading, setloading] = useState(false);
     const Document = [];
+    var BUTTONS = ["camera", "Galary", "Cancel"];
+    var CANCEL_INDEX = 2;
+
+    if (props.route.params !== undefined) {
+        console.log(props.route.params, "hi1234")
+
+        const { addressfromMap } = props.route.params
+        console.log("address", addressfromMap)
+        var data = addressfromMap
+
+    }
 
     useEffect(() => {
         get_customer_data()
+
     }, [])
 
     const get_customer_data = async () => {
@@ -129,33 +143,123 @@ const NewTask = (props) => {
             API.sync_data(data, cb, header);
         }
     }
-    const addPicture = () => {
+    // const addPicture = () => {
+    //     if (!task_id) {
+    //         Alert.alert(helpers.getLocale(localize, "newTask", "taskid_not_availabel"))
+
+    //     }
+    //     else {
+    //         const options = {
+    //             title: 'Select Photo',
+    //             storageOptions: {
+    //                 skipBackup: true,
+    //                 path: 'images',
+    //             },
+    //         };
+    //         ImagePicker.showImagePicker(options, (response) => {
+    //             const base64Value = response.data;
+    //             if (response.didCancel) {
+    //                 console.log('User cancelled image picker');
+    //             } else if (response.error) {
+    //                 console.log('ImagePicker Error: ', response.error);
+    //             } else if (response.customButton) {
+    //                 console.log('User tapped custom button: ', response.customButton);
+    //             } else {
+    //                 console.log('picker resp', response)
+    //                 uploadDoc(response.fileName, response.uri, base64Value, " ", "Photo1")
+    //             }
+    //         });
+    //     }
+    // }
+    const imagePicker = () => {
         if (!task_id) {
             Alert.alert(helpers.getLocale(localize, "newTask", "taskid_not_availabel"))
 
         }
         else {
-            const options = {
-                title: 'Select Photo',
-                storageOptions: {
-                    skipBackup: true,
-                    path: 'images',
+
+            ActionSheet.show(
+                {
+                    options: BUTTONS,
+                    cancelButtonIndex: CANCEL_INDEX,
+                    title: "Select Photo"
                 },
-            };
-            ImagePicker.showImagePicker(options, (response) => {
-                const base64Value = response.data;
-                if (response.didCancel) {
-                    console.log('User cancelled image picker');
-                } else if (response.error) {
-                    console.log('ImagePicker Error: ', response.error);
-                } else if (response.customButton) {
-                    console.log('User tapped custom button: ', response.customButton);
-                } else {
-                    console.log('picker resp', response)
-                    uploadDoc(response.fileName, response.uri, base64Value, " ", "Photo1")
+                buttonIndex => {
+                    if (buttonIndex === 0) {
+                        imagefromCamera()
+                    }
+                    else if (buttonIndex === 1) {
+                        imagefromGalary()
+                    }
                 }
-            });
+            )
+
+            // Alert.alert(
+            //     'Success', " select image  ",
+            //     [
+            //         {
+            //             text: 'camera', onPress: () => {
+            //                 imagefromCamera()
+
+            //             }
+            //         },
+            //         {
+            //             text: 'galary', onPress: () => {
+
+            //                 imagefromGalary()
+
+
+            //             }
+
+
+
+            //         },
+            //     ]
+            // );
         }
+
+    }
+    const imagefromGalary = () => {
+
+        ImagePicker1.openPicker({
+            width: 1000,
+            height: 1000,
+            includeBase64: true,
+            cropping: false,
+            mediaType: 'photo',
+
+            smartAlbums: ['PhotoStream', 'Generic', 'Panoramas', 'Videos', 'Favorites', 'Timelapses', 'AllHidden', 'RecentlyAdded', 'Bursts', 'SlomoVideos', 'UserLibrary', 'SelfPortraits', 'Screenshots', 'DepthEffect', 'LivePhotos', 'Animated', 'LongExposure']
+        }).then(response => {
+            const base64 = response.data
+            const name = response.path.split("/").pop()
+            // this.getImageURL(response, 'photo')
+            // console.log("response :", response)
+            uploadDoc(name, response.path, base64, " ", "Photo1")
+
+
+        })
+            .catch(err => {
+                console.log("err", err)
+            })
+
+    }
+
+    const imagefromCamera = () => {
+        ImagePicker1.openCamera({
+            width: 300,
+            height: 400,
+            cropping: false,
+            includeBase64: true,
+            mediaType: 'photo',
+        }).then(response => {
+            const base64 = response.data
+            const name = response.path.split("/").pop()
+            uploadDoc(name, response.path, base64, " ", "Photo1")
+        })
+            .catch(err => {
+                console.log("err", err)
+            })
+
     }
 
     const uploadDoc = async (fileName, uri, photo, doc, image) => {
@@ -198,8 +302,9 @@ const NewTask = (props) => {
                     setTimeout(() => { setloading(false) }, 300)
                 },
                 error: (err) => {
+                    console.log({ err })
                     setloading(false)
-                    Alert.alert("Error", " Something went wrong while uploading document")
+                    Alert.alert(err.message)
                 },
                 complete: () => {
                     setloading(false)
@@ -349,7 +454,7 @@ const NewTask = (props) => {
                         <_InputText
                             style={styles.TextInput1}
                             placeholder={helpers.getLocale(localize, "newTask", "address")}
-                            value={address}
+                            value={(data ? data : address)}
                             leftIcon={images.location}
                             onChangeText={value => {
                                 setaddress(value), onEdit()
@@ -365,12 +470,17 @@ const NewTask = (props) => {
                             onChangeText={value => { setdescription(value) }
                             }
                         />
+
+
                         <_PairButton
                             icon1={images.camera}
                             icon2={images.document}
                             icon1Style={styles.pairButtonIcon}
                             txtStyle1={{ color: "red" }}
-                            callback1={() => { addPicture() }}
+                            callback1={() => {
+                                // addPicture()
+                                imagePicker()
+                            }}
                             callback2={() => { addDocument() }}
                             style={styles.pairButton}
                         />

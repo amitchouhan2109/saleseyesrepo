@@ -5,7 +5,7 @@
 
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 import React from "react";
-import { View, Text, Share, Button, TouchableOpacity, FlatList, Dimensions, StyleSheet, TextInput } from "react-native";
+import { View, Text, Share, Button, TouchableOpacity, FlatList, Dimensions, StyleSheet, TextInput, Alert } from "react-native";
 import Geolocation from '@react-native-community/geolocation';
 import Geocoder from 'react-native-geocoding';
 
@@ -30,8 +30,8 @@ export default class Map extends React.Component {
         this.state = {
             loading: true,
             region: {
-                latitude: 0,
-                longitude: 0,
+                latitude: 10,
+                longitude: 10,
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421,
             },
@@ -44,8 +44,8 @@ export default class Map extends React.Component {
 
 
     componentDidMount() {
-        Geocoder.init("AIzaSyCnTVcKa7vGMLY_h73i_9771INltnOdjiQ")
-        // Geocoder.init("AIzaSyB-1UgXp3dcLFbi6IbyZneoM8DwIevtke0")
+        // Geocoder.init("AIzaSyCnTVcKa7vGMLY_h73i_9771INltnOdjiQ")
+        // Geocoder.init("AIzaSyA1dN3ZXZiAAxmtkafcgakmm2DeDSosf_w")
 
 
         Geolocation.getCurrentPosition((position) => {
@@ -60,49 +60,22 @@ export default class Map extends React.Component {
                 region: region,
                 loading: false,
                 error: null,
+                userLocation: " your location "
             });
         })
-        Geocoder.from("pune")
-            .then(json => {
-                var location = json.results[0].geometry.location;
-                console.log(location);
-            })
-            .catch(error => console.log(error, "10")),
-            Geocoder.from(41.89, 12.49)
-                .then(json => {
-                    var addressComponent = json.results[0].address_components[0];
-                    console.log(addressComponent, "12");
-                })
-                .catch(error => console.log(error, "11"));
+        // Geocoder.from("pune")
+        //     .then(json => {
+        //         var location = json.results[0].geometry.location;
+        //         console.log(location);
+        //     })
+        //     .catch(error => console.log(error, "10")),
 
 
 
 
 
-        // navigator.geolocation.getCurrentPosition(
-        // (position) => {
-        //     console.log(position)
-        //     const region = {
-        //         //     latitude: position.coords.latitude,
-        //         //     longitude: position.coords.longitude,
-        //         //     latitudeDelta: 0.001,
-        //         //     longitudeDelta: 0.001
-        //     };
-        //     console.log(region)
-        //     // this.setState({
-        //     //     region: region,
-        //     //     loading: false,
-        //     //     error: null,
-        //     // });
-        // },
-        // (error) => {
-        //     alert(error);
-        //     // this.setState({
-        //     //     error: error.message,
-        //     //     loading: false
-        //     // })
-        // },
-        //     { enableHighAccuracy: false, timeout: 200000, maximumAge: 5000 },
+
+
 
     }
     onMapReady = () => {
@@ -111,18 +84,38 @@ export default class Map extends React.Component {
 
     // Fetch location details as a JOSN from google map API
     fetchAddress = () => {
+
+
         fetch("https://maps.googleapis.com/maps/api/geocode/json?address="
-            + 18.5204 + "," + 73.8567 +
-            "&key=" + "AIzaSyB-1UgXp3dcLFbi6IbyZneoM8DwIevtke0")
+            + this.state.region.latitude + "," + this.state.region.longitude +
+            "&key=" + "AIzaSyA1dN3ZXZiAAxmtkafcgakmm2DeDSosf_w")
             .then((response) => response.json())
             .then((responseJson) => {
-                console.log(responseJson)
-                // const userLocation = responseJson.results[0].formatted_address;
-                // this.setState({
-                //     userLocation: userLocation,
-                //     regionChangeProgress: false
-                // });
+                const res = responseJson.results[0].formatted_address;
+                Alert.alert(
+                    ' Do you want to set this location  as address', res,
+                    [
+                        {
+                            text: 'Yes', onPress: () => {
+                                this.props.navigation.navigate('NewTask', { addressfromMap: res })
+
+                            }
+                        },
+                        {
+                            text: 'No', onPress: () => {
+                                console.log("no")
+                            }
+                        },
+                    ]
+                );
+                const userLocation = responseJson.results[0].formatted_address;
+                this.setState({
+                    userLocation: userLocation,
+                    regionChangeProgress: false
+                });
             });
+
+
     }
 
     // Update state on region change
@@ -137,20 +130,24 @@ export default class Map extends React.Component {
     render() {
         const { marker } = this.props;
         return (
-            <MapView
-                style={styles.map}
-                initialRegion={this.state.region}
-                showsUserLocation={true}
-                onMapReady={this.onMapReady}
-                onRegionChangeComplete={this.onRegionChange}>
-                <MapView.Marker
-                    coordinate={{
-                        "latitude": this.state.region.latitude,
-                        "longitude": this.state.region.longitude
-                    }}
-                    title={"Your Location"}
-                    draggable />
-            </MapView>
+            <View style={styles.container}>
+                <View style={{ flex: 2 }}>
+                    <MapView
+                        style={styles.map}
+                        initialRegion={this.state.region}
+                        showsUserLocation={true}
+                        onMapReady={this.onMapReady}
+                        onRegionChangeComplete={this.onRegionChange}>
+                        <MapView.Marker
+                            coordinate={{
+                                "latitude": this.state.region.latitude,
+                                "longitude": this.state.region.longitude
+                            }}
+                            title={this.state.userLocation}
+                            draggable />
+                    </MapView>
+                </View>
+            </View>
 
 
 
@@ -161,14 +158,18 @@ export default class Map extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 20,
-        height: screen.height - 140,
+        // marginTop: 20,
+        // height: screen.height - 140,
+        display: "flex",
+        height: Dimensions.get("screen").height,
+        width: Dimensions.get("screen").width
 
     },
     map: {
-        ...StyleSheet.absoluteFillObject,
+        // ...StyleSheet.absoluteFillObject,
         flex: 1
     },
+
 });
 
 

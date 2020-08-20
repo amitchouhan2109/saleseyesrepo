@@ -102,7 +102,7 @@ const Tasks = (props) => {
             success: async (res) => {
                 dispatch(setTasks({ res }))
                 setTaskLoader(false)
-                // console.log({ res })
+                console.log({ res })
                 const TaskList = res[0].tasks
                 TaskList.sort(function (a, b) {
                     return (b.id - a.id)
