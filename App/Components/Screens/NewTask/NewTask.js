@@ -83,7 +83,7 @@ const NewTask = (props) => {
 
     }
     const addTask = async () => {
-        console.log(mapdata, "mapData")
+
         setloading(true)
         let userAuthdetails = await helpers.userAuthdetails();
         const baseUrl = await AsyncStorage.getItem("baseUrl");
