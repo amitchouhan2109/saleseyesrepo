@@ -194,13 +194,13 @@ const Login = (props) => {
                 <_InputText
                     style={styles.TextInput}
                     placeholder={helpers.getLocale(localize, "login", "userName")}
-                    onChangeText={value => { setuserName(value) }}
+                    onChangeText={value => { setuserName(value.trim()) }}
                     value={userName}
                 />
                 <_InputText
                     style={styles.TextInput}
                     placeholder={helpers.getLocale(localize, "login", "password")}
-                    onChangeText={value => { setpassword(value) }}
+                    onChangeText={value => { setpassword(value.trim()) }}
                     value={password}
                     secureTextEntry
 
@@ -208,7 +208,7 @@ const Login = (props) => {
                 <_InputText
                     style={styles.TextInput}
                     placeholder={helpers.getLocale(localize, "login", "customerId")}
-                    onChangeText={value => { setcustomerId(value) }}
+                    onChangeText={value => { setcustomerId(value.trim()) }}
                     value={customerId}
                 />
                 <View style={styles.checkboxWrapper}>

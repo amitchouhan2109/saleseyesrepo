@@ -91,11 +91,11 @@ const NewTask = (props) => {
                 success: async (res) => {
                     console.log({ res })
                     // setTimeout(
-                    // () => {
+                    //     () => {
                     setloading(false),
                         Alert.alert(helpers.getLocale(localize, "newTask", "task_save"));
 
-                    // }, 2000
+                    //     }, 2000
                     // )
                     settask_id(res.record_id)
                 },
