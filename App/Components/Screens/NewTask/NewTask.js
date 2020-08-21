@@ -22,6 +22,7 @@ import RNFS from 'react-native-fs'
 import AddressLocation from '../map'
 import ImagePicker1 from 'react-native-image-crop-picker';
 import { Container, Header, Button, Content, ActionSheet } from "native-base";
+import Map from "../map"
 
 const NewTask = (props) => {
     const localize = useSelector(state => state.localize);
@@ -38,18 +39,12 @@ const NewTask = (props) => {
     const [uploadedImg, setuploadedImg] = useState([]);
     const [initialLoading, setinitialLoading] = useState(true);
     const [loading, setloading] = useState(false);
+    const [locationExpand, setlocationExpand] = useState(false)
     const Document = [];
     var BUTTONS = ["camera", "Galary", "Cancel"];
     var CANCEL_INDEX = 2;
 
-    if (props.route.params !== undefined) {
-        console.log(props.route.params, "hi1234")
 
-        const { addressfromMap } = props.route.params
-        console.log("address", addressfromMap)
-        var mapdata = addressfromMap
-
-    }
 
     useEffect(() => {
         get_customer_data()
@@ -120,7 +115,7 @@ const NewTask = (props) => {
                 edit ?
                     {
                         "object": name,
-                        "address": mapdata ? mapdata : address,
+                        "address": address,
                         "description": description,
                         "title": title,
                     } :
@@ -222,7 +217,6 @@ const NewTask = (props) => {
 
     }
     const imagefromGalary = () => {
-
         ImagePicker1.openPicker({
             width: 1000,
             height: 1000,
@@ -281,7 +275,6 @@ const NewTask = (props) => {
                                 text: 'OK', onPress: () => {
                                     const source = { uri: uri };
                                     if (image != " ") {
-
                                         const item = { "fileName": fileName }
                                         const arr = [...uploadedImg]
                                         arr.push(item)
@@ -418,110 +411,121 @@ const NewTask = (props) => {
 
     }
 
-    const addresLocation = () => {
-        Alert.alert("hello")
+    const pressHandle = (data) => {
+        if (data) {
+            setaddress(data)
+        }
+        setlocationExpand(false)
+        setedit(true)
     }
 
 
     return (
-        <View style={[mainStyle.rootView, styles.container]}>
-            <Loader
-                loading={loading} />
-            {initialLoading ? < Loader
-                name /> :
-                <>
-                    <_Header header={helpers.getLocale(localize, "newTask", "new_task")}
-                        rightIcon={images.menu} rightcb
-                        onPress_signout={() => signout()}
-                        onPress={() => props.navigation.navigate('ChangePassord')}
-                    />
-                    <View style={{}}>
-
-                        <_InputText
-                            style={styles.TextInput}
-                            placeholder={helpers.getLocale(localize, "newTask", "title")}
-                            onChangeText={value => { settitle(value) }
-                            }
-                        />
-                        <_InputText
-                            style={styles.TextInput1}
-                            placeholder={helpers.getLocale(localize, "newTask", "name")}
-                            value={name}
-                            onChangeText={value => {
-                                setname(value),
-                                    onEdit()
-                            }
-                            }
-                        />
-                        <_InputText
-                            style={styles.TextInput1}
-                            placeholder={helpers.getLocale(localize, "newTask", "address")}
-                            value={(mapdata ? mapdata : address)}
-                            leftIcon={images.location}
-                            onChangeText={value => {
-                                setaddress(value), onEdit()
-                            }}
-                            multiline={true}
-
-                            callback={() => props.navigation.navigate("AddressLocation", { address: address })
-                                // { AddressLocation() }
-                                // Alert.alert("hi")}
-                            }
-                            ellipsizeMode="tail"
-                        />
-                        <_InputText
-                            style={styles.TextInput1}
-                            placeholder={helpers.getLocale(localize, "newTask", "description")}
-                            onChangeText={value => { setdescription(value) }
-                            }
-                        />
-
-
-                        <_PairButton
-                            icon1={images.camera}
-                            icon2={images.document}
-                            icon1Style={styles.pairButtonIcon}
-                            txtStyle1={{ color: "red" }}
-                            callback1={() => {
-                                // addPicture()
-                                imagePicker()
-                            }}
-                            callback2={() => { addDocument() }}
-                            style={styles.pairButton}
-                        />
-                        <View style={styles.uploadDocWrapper}>
-                            <FlatList
-                                data={uploadedImg}
-                                renderItem={({ item, index }) =>
-                                    <Text style={styles.text}>{item.fileName}</Text>}
-
-                                keyExtractor={(item, index) => index.toString()}
-                                removeClippedSubviews={Platform.OS == "android" ? true : false}
+        <>
+            {(!locationExpand) ?
+                <View style={[mainStyle.rootView, styles.container]}>
+                    <Loader
+                        loading={loading} />
+                    {initialLoading ? < Loader
+                        name /> :
+                        <>
+                            <_Header header={helpers.getLocale(localize, "newTask", "new_task")}
+                                rightIcon={images.menu} rightcb
+                                onPress_signout={() => signout()}
+                                onPress={() => props.navigation.navigate('ChangePassord')}
                             />
-                            <FlatList
-                                data={uploadedDoc}
-                                renderItem={({ item, index }) =>
-                                    <Text style={styles.text}>{item.fileName}</Text>}
+                            <View style={{}}>
 
-                                keyExtractor={(item, index) => index.toString()}
-                                removeClippedSubviews={Platform.OS == "android" ? true : false}
-                            />
-                        </View>
+                                <_InputText
+                                    style={styles.TextInput}
+                                    placeholder={helpers.getLocale(localize, "newTask", "title")}
+                                    onChangeText={value => { settitle(value) }
+                                    }
+                                />
+                                <_InputText
+                                    style={styles.TextInput1}
+                                    placeholder={helpers.getLocale(localize, "newTask", "name")}
+                                    value={name}
+                                    onChangeText={value => {
+                                        setname(value.trim()),
+                                            onEdit()
+                                    }
+                                    }
+                                />
+                                <_InputText
+                                    style={styles.TextInput1}
+                                    placeholder={helpers.getLocale(localize, "newTask", "address")}
+                                    value={address}
+                                    leftIcon={images.location}
+                                    onChangeText={value => {
+                                        setaddress(value.trim()), onEdit()
+                                    }}
+                                    multiline={true}
 
-                    </View>
-                    <View style={[styles.signUpWrapper, { borderWidth: 0 }]}>
-                        <View style={styles.signUpView}>
-                            <_PairButton
-                                btnTxt1={helpers.getLocale(localize, "task", "cancel")}
-                                btnTxt2={helpers.getLocale(localize, "task", "save")}
-                                txtStyle1={{ color: "red", }}
-                                callback1={() => { cancleButtonHandler() }}
-                                callback2={() => { saveButtonHandler() }}
-                            />
-                        </View>
-                    </View>
-                </>}
-        </View >
+                                    callback={() =>
+                                        setlocationExpand(true)
+                                        // props.navigation.navigate("AddressLocation", { address: address })
+                                        // { AddressLocation() }
+                                        // Alert.alert("hi")}
+                                    }
+                                    ellipsizeMode="tail"
+                                />
+                                <_InputText
+                                    style={styles.TextInput1}
+                                    placeholder={helpers.getLocale(localize, "newTask", "description")}
+                                    onChangeText={value => { setdescription(value) }
+                                    }
+                                />
+
+
+                                <_PairButton
+                                    icon1={images.camera}
+                                    icon2={images.document}
+                                    icon1Style={styles.pairButtonIcon}
+                                    txtStyle1={{ color: "red" }}
+                                    callback1={() => {
+                                        // addPicture()
+                                        imagePicker()
+                                    }}
+                                    callback2={() => { addDocument() }}
+                                    style={styles.pairButton}
+                                />
+                                <View style={styles.uploadDocWrapper}>
+                                    <FlatList
+                                        data={uploadedImg}
+                                        renderItem={({ item, index }) =>
+                                            <Text style={styles.text}>{item.fileName}</Text>}
+
+                                        keyExtractor={(item, index) => index.toString()}
+                                        removeClippedSubviews={Platform.OS == "android" ? true : false}
+                                    />
+                                    <FlatList
+                                        data={uploadedDoc}
+                                        renderItem={({ item, index }) =>
+                                            <Text style={styles.text}>{item.fileName}</Text>}
+
+                                        keyExtractor={(item, index) => index.toString()}
+                                        removeClippedSubviews={Platform.OS == "android" ? true : false}
+                                    />
+                                </View>
+
+                            </View>
+                            <View style={[styles.signUpWrapper, { borderWidth: 0 }]}>
+                                <View style={styles.signUpView}>
+                                    <_PairButton
+                                        btnTxt1={helpers.getLocale(localize, "task", "cancel")}
+                                        btnTxt2={helpers.getLocale(localize, "task", "save")}
+                                        txtStyle1={{ color: "red", }}
+                                        callback1={() => { cancleButtonHandler() }}
+                                        callback2={() => { saveButtonHandler() }}
+                                    />
+                                </View>
+                            </View>
+                        </>}
+                </View >
+                :
+                <Map onPressmap={(data) => { pressHandle(data) }} />}
+        </>
 
     );
 };

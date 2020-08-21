@@ -1,13 +1,9 @@
-
-
-
-
-
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 import React from "react";
-import { View, Text, Share, Button, TouchableOpacity, FlatList, Dimensions, StyleSheet, TextInput, Alert, ActivityIndicator } from "react-native";
+import { View, Text, Share, Button, TouchableOpacity, FlatList, Modal, Dimensions, StyleSheet, TextInput, Alert, ActivityIndicator } from "react-native";
 import Geolocation from '@react-native-community/geolocation';
 import Geocoder from 'react-native-geocoding';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 
@@ -27,7 +23,7 @@ export default class Map extends React.Component {
     constructor(props) {
         super(props)
 
-
+        console.log(props, "8605")
         this.state = {
 
             focusedLocation: {
@@ -41,7 +37,7 @@ export default class Map extends React.Component {
             },
             locationChosen: false,
             address: "",
-            userLocation: "your current Location"
+            userLocation: "Your current location"
         }
     }
 
@@ -73,14 +69,6 @@ export default class Map extends React.Component {
         //         console.log(location);
         //     })
         //     .catch(error => console.log(error, "10")),
-
-
-
-
-
-
-
-
     }
     onMapReady = () => {
         this.setState({ isMapReady: true, marginTop: 0 });
@@ -88,36 +76,17 @@ export default class Map extends React.Component {
 
     // Fetch location details as a JOSN from google map API
     fetchAddress = () => {
-
-
         fetch("https://maps.googleapis.com/maps/api/geocode/json?address="
             + this.state.focusedLocation.latitude + "," + this.state.focusedLocation.longitude +
             "&key=" + "AIzaSyA1dN3ZXZiAAxmtkafcgakmm2DeDSosf_w")
             .then((response) => response.json())
             .then((responseJson) => {
-                console.log(responseJson, "1234")
+                // console.log(responseJson, )
                 if (responseJson.status === "OK") {
                     const res = responseJson.results[0].formatted_address;
-                    // Alert.alert(
-                    //     ' Do you want to set this location  as address', res,
-                    //     [
-                    //         {
-                    //             text: 'Yes', onPress: () => {
-                    //                 this.props.navigation.navigate('NewTask', { addressfromMap: res })
-
-                    //             }
-                    //         },
-                    //         {
-                    //             text: 'No', onPress: () => {
-                    //                 console.log("no")
-                    //             }
-                    //         },
-                    //     ]
-                    // );
                     const userLocation = responseJson.results[0].formatted_address;
                     this.setState({
                         userLocation: userLocation,
-                        // regionChangeProgress: false,
                         address: res
                     });
                 }
@@ -134,15 +103,19 @@ export default class Map extends React.Component {
 
     }
 
-    onPressHandler() {
+    onPressHandler = () => {
+        console.log("add", this.state.address)
         if (this.state.address != "") {
+            const address = this.state.address
+
             Alert.alert(
                 ' Do you want to set this location  as address', this.state.address,
                 [
                     {
                         text: 'YES', onPress: () => {
-                            this.props.navigation.navigate('NewTask', { addressfromMap: this.state.address })
-
+                            this.props.onPressmap(address)
+                            // return (this.state.address)
+                            // this.props.navigation.navigate('NewTask', { addressfromMap: this.state.address })
                         }
                     },
                     {
@@ -196,9 +169,12 @@ export default class Map extends React.Component {
                 alert("Fetching the Position failed, please pick one manually!");
             })
     }
+    closeHandler = () => {
+        this.props.onPressmap()
+
+    }
 
     render() {
-        // const { marker } = this.props;
         let marker = null;
 
         if (this.state.locationChosen) {
@@ -208,17 +184,26 @@ export default class Map extends React.Component {
             />;
         }
         return (
-            <View style={styles.container}>
-                <MapView
-                    initialRegion={this.state.focusedLocation}
-                    region={!this.state.locationChosen ? this.state.focusedLocation : null}
-                    style={styles.map}
-                    onPress={this.pickLocationHandler}
-                    ref={ref => this.map = ref}
-                >
-                    {marker}
-                </MapView>
-            </View>
+            <Modal animationType={"none"}
+                visible={true}
+                onRequestClose={() => this.closeHandler()
+                }
+            >
+                <View style={styles.container}>
+                    <MapView
+                        initialRegion={this.state.focusedLocation}
+                        region={!this.state.locationChosen ? this.state.focusedLocation : null}
+                        style={styles.map}
+                        onPress={this.pickLocationHandler}
+                        ref={ref => this.map = ref}
+                    >
+                        {marker}
+                        <View style={{ alignItems: 'flex-end', paddingRight: 10 }}>
+                            <Icon name="window-close" size={30} color="#8B0000" onPress={() => this.closeHandler()} />
+                        </View>
+                    </MapView>
+                </View>
+            </Modal>
 
 
 
@@ -229,16 +214,18 @@ export default class Map extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 20,
+        // marginTop: 20,
         // height: screen.height - 140,
         display: "flex",
         height: Dimensions.get("screen").height,
-        width: Dimensions.get("screen").width
+        width: Dimensions.get("screen").width,
+        // position: "relative"
 
     },
     map: {
         // ...StyleSheet.absoluteFillObject,
         flex: 1,
+        // position: "relative"
         // height: 600
     },
 
