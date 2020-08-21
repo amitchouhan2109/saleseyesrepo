@@ -47,7 +47,7 @@ const NewTask = (props) => {
 
         const { addressfromMap } = props.route.params
         console.log("address", addressfromMap)
-        var data = addressfromMap
+        var mapdata = addressfromMap
 
     }
 
@@ -88,6 +88,7 @@ const NewTask = (props) => {
 
     }
     const addTask = async () => {
+        console.log(mapdata, "mapData")
         setloading(true)
         let userAuthdetails = await helpers.userAuthdetails();
         const baseUrl = await AsyncStorage.getItem("baseUrl");
@@ -119,7 +120,7 @@ const NewTask = (props) => {
                 edit ?
                     {
                         "object": name,
-                        "address": address,
+                        "address": mapdata ? mapdata : address,
                         "description": description,
                         "title": title,
                     } :
@@ -139,6 +140,7 @@ const NewTask = (props) => {
                 "portal_user": userAuthdetails.portal_user,
                 "api_key": globals.API_KEY
             };
+            console.log("data2", data)
 
             API.sync_data(data, cb, header);
         }
@@ -454,7 +456,7 @@ const NewTask = (props) => {
                         <_InputText
                             style={styles.TextInput1}
                             placeholder={helpers.getLocale(localize, "newTask", "address")}
-                            value={(data ? data : address)}
+                            value={(mapdata ? mapdata : address)}
                             leftIcon={images.location}
                             onChangeText={value => {
                                 setaddress(value), onEdit()
