@@ -29,9 +29,9 @@ const _InputText = (props) => {
                         editable={props.editable}
                         autoCapitalize='none'
                         secureTextEntry={props.secureTextEntry ? props.secureTextEntry : null}
-
-                    // errMsg={props.errMsg ? props.errMsg : " "}
-                    // style={{ backgroundColor: 'yellow' }}
+                        ellipsizeMode={props.ellipsizeMode ? props.ellipsizeMode : null}
+                    // selection={{ start: 0, }}
+                    // autoFocus={true}
                     >
                     </TextInput>
 

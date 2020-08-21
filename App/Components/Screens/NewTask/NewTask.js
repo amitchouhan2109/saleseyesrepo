@@ -463,6 +463,7 @@ const NewTask = (props) => {
                                 // { AddressLocation() }
                                 // Alert.alert("hi")}
                             }
+                            ellipsizeMode="tail"
                         />
                         <_InputText
                             style={styles.TextInput1}
