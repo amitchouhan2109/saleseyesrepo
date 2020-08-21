@@ -30,6 +30,7 @@ const _InputText = (props) => {
                         autoCapitalize='none'
                         secureTextEntry={props.secureTextEntry ? props.secureTextEntry : null}
                         ellipsizeMode={props.ellipsizeMode ? props.ellipsizeMode : null}
+                        multiline={props.multiline ? props.multiline : null}
                     // selection={{ start: 0, }}
                     // autoFocus={true}
                     >

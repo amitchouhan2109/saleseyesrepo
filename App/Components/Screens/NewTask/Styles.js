@@ -19,7 +19,8 @@ export default styles = StyleSheet.create({
     },
     TextInput1: {
         marginTop: Platform.OS === 'ios' ? 40 : 20,
-        fontFamily: fonts.fontFamily.Regular
+        fontFamily: fonts.fontFamily.Regular,
+
 
     },
     signUpWrapper: {

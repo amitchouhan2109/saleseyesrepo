@@ -459,6 +459,8 @@ const NewTask = (props) => {
                             onChangeText={value => {
                                 setaddress(value), onEdit()
                             }}
+                            multiline={true}
+
                             callback={() => props.navigation.navigate("AddressLocation", { address: address })
                                 // { AddressLocation() }
                                 // Alert.alert("hi")}
