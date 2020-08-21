@@ -41,7 +41,7 @@ const NewTask = (props) => {
     const [loading, setloading] = useState(false);
     const [locationExpand, setlocationExpand] = useState(false)
     const Document = [];
-    var BUTTONS = ["camera", "Galary", "Cancel"];
+    var BUTTONS = ["Camera", "Galary", "Cancel"];
     var CANCEL_INDEX = 2;
 
 
@@ -83,7 +83,6 @@ const NewTask = (props) => {
 
     }
     const addTask = async () => {
-
         setloading(true)
         let userAuthdetails = await helpers.userAuthdetails();
         const baseUrl = await AsyncStorage.getItem("baseUrl");
@@ -91,13 +90,13 @@ const NewTask = (props) => {
             let cb = {
                 success: async (res) => {
                     console.log({ res })
-                    setTimeout(
-                        () => {
-                            setloading(false),
-                                Alert.alert(helpers.getLocale(localize, "newTask", "task_save"));
+                    // setTimeout(
+                    // () => {
+                    setloading(false),
+                        Alert.alert(helpers.getLocale(localize, "newTask", "task_save"));
 
-                        }, 2000
-                    )
+                    // }, 2000
+                    // )
                     settask_id(res.record_id)
                 },
                 error: (err) => {
@@ -438,8 +437,9 @@ const NewTask = (props) => {
 
                                 <_InputText
                                     style={styles.TextInput}
+                                    value={title}
                                     placeholder={helpers.getLocale(localize, "newTask", "title")}
-                                    onChangeText={value => { settitle(value) }
+                                    onChangeText={value => { settitle(value.trim()) }
                                     }
                                 />
                                 <_InputText
@@ -468,10 +468,11 @@ const NewTask = (props) => {
                                         // { AddressLocation() }
                                         // Alert.alert("hi")}
                                     }
-                                    ellipsizeMode="tail"
+                                // ellipsizeMode="tail"
                                 />
                                 <_InputText
                                     style={styles.TextInput1}
+                                    value={description}
                                     placeholder={helpers.getLocale(localize, "newTask", "description")}
                                     onChangeText={value => { setdescription(value) }
                                     }
