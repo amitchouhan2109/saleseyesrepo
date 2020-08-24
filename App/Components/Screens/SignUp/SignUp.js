@@ -90,7 +90,7 @@ const SignUp = (props) => {
             success: async (res) => {
                 // console.log("success res:", res)
                 setloading(false)
-                Alert.alert(helpers.getLocale(localize, "signIn", "onSubmitSuccess"),
+                Alert.alert('Success', helpers.getLocale(localize, "signIn", "onSubmitSuccess"),
                     [
                         {
                             text: 'OK', onPress: () => {
@@ -130,7 +130,7 @@ const SignUp = (props) => {
         setloading(true)
         let cb = {
             success: async (res) => {
-                // console.log("success res:", res)
+                console.log("success res:", res)
                 if (res.error === null) {
                     await AsyncStorage.setItem("baseUrl", res.result.ws_url);
                     signupUser()
@@ -174,51 +174,51 @@ const SignUp = (props) => {
                     <_InputText
                         style={styles.TextInput}
                         placeholder={helpers.getLocale(localize, "signIn", "first_name")}
-                        onChangeText={value => setuserName(value)}
+                        onChangeText={value => setuserName(value.trim())}
                         value={userName}
                     />
                     <_InputText
                         style={styles.TextInput}
                         placeholder={helpers.getLocale(localize, "signIn", "last_name")}
-                        onChangeText={value => setlastName(value)}
+                        onChangeText={value => setlastName(value.trim())}
                         value={lastName}
                     />
                     <_InputText
                         style={styles.TextInput}
                         placeholder={helpers.getLocale(localize, "signIn", "company")}
-                        onChangeText={value => setcompany(value)}
+                        onChangeText={value => setcompany(value.trim())}
                         value={company}
 
                     />
                     <_InputText
                         style={styles.TextInput}
                         placeholder={helpers.getLocale(localize, "login", "customerId")}
-                        onChangeText={value => { setcustomerId(value) }}
+                        onChangeText={value => { setcustomerId(value.trim()) }}
                         value={customerId}
                     />
                     <_InputText
                         style={styles.TextInput}
                         placeholder={helpers.getLocale(localize, "signIn", "phone")}
-                        onChangeText={value => setphoneNo(value)}
+                        onChangeText={value => setphoneNo(value.trim())}
                         value={phoneNo}
                         keyboardType={'numeric'}
                     />
                     <_InputText
                         style={styles.TextInput}
                         placeholder={helpers.getLocale(localize, "signIn", "email")}
-                        onChangeText={value => setemail(value)}
+                        onChangeText={value => setemail(value.trim())}
                         value={email}
                     />
                     <_InputText
                         style={styles.TextInput}
                         placeholder={helpers.getLocale(localize, "signIn", "address")}
-                        onChangeText={value => setaddress(value)}
+                        onChangeText={value => setaddress(value.trim())}
                         value={address}
                     />
                     <_InputText
                         style={styles.TextInput}
                         placeholder={helpers.getLocale(localize, "signIn", "city")}
-                        onChangeText={value => setcity(value)}
+                        onChangeText={value => setcity(value.trim())}
                         value={city}
                     />
 
