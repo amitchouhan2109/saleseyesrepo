@@ -95,11 +95,18 @@ const NewTask = (props) => {
 
                     if (uploadedDoc.length > 0) {
                         var mape = uploadedDoc.map((element) => {
-                            console.log(element)
+                            // console.log(element)
                             uploadDoc(element, res.record_id)
+                            return element
+
 
                         })
-                        // uploadDoc("abc")
+                        for (let i = 0; i < uploadedDoc.length; i++) {
+
+                            // const abc = await uploadDoc()
+                        }
+                        // console.log("123", mape)
+
                         Alert.alert('Success', helpers.getLocale(localize, "newTask", "task_save"),
                             [
                                 {
@@ -163,7 +170,7 @@ const NewTask = (props) => {
                 "portal_user": userAuthdetails.portal_user,
                 "api_key": globals.API_KEY
             };
-            console.log("data2", data)
+
 
             API.sync_data(data, cb, header);
         }
@@ -291,6 +298,7 @@ const NewTask = (props) => {
             let cb = {
                 success: async (res) => {
                     console.log({ res })
+                    return (true)
                     // Alert.alert(
                     //     'Success',
                     //     helpers.getLocale(localize, "newTask", "upload_success"),
@@ -364,10 +372,7 @@ const NewTask = (props) => {
     }
 
     const addDocument = async () => {
-        // if (!task_id) {
-        //     Alert.alert(helpers.getLocale(localize, "newTask", "taskid_not_availabel"))
-        // }
-        // else {
+
         DocumentPicker.pick({
             type: [DocumentPicker.types.allFiles]
         })
@@ -386,7 +391,6 @@ const NewTask = (props) => {
                         "fileName": res.name,
                         "base64": result
                     }
-                    console.log("itemDoc", item)
                     const array = [...uploadedDoc]
                     array.push(item)
                     setuploadedDoc(array)
@@ -451,7 +455,7 @@ const NewTask = (props) => {
         setedit(true)
     }
 
-    console.log("upload", uploadedDoc)
+
     return (
         <>
             {(!locationExpand) ?
